@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumen</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+    <div class="container text-center">
+        <div class="card shadow-lg p-4 border-0 rounded-4" style="max-width: 800px; margin: auto;">
+            <div class="d-flex justify-content-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" 
+                     alt="Coat of Arms of Makassar" 
+                     class="img-fluid mb-3" 
+                     style="height: 100px; width: 100px;">
+            </div>
+            <h1 class="mb-3 text-primary">Cek di sini</h1>
+            <input type="text" id="search" class="form-control mb-3" placeholder="Cari data...">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Nama</th>
+                        <th onclick="sortTable(1)">Usia</th>
+                        <th onclick="sortTable(2)">Kota</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table">
+                </tbody>
+            </table>
+            <a href="https://docs.google.com/spreadsheets/d/1pcwE1QG0zuQSgajTKFLqOjdHliTDxAwP0t11FkDR0XM/edit?usp=sharing" 
+               target="_blank" 
+               class="btn btn-primary btn-lg px-4 py-2 rounded-pill shadow-sm">
+               Buka Spreadsheet
+            </a>
+        </div>
+    </div>
+    <script>
+        async function fetchData() {
+    const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvEzh0Ps5yeM9uGO5vuubyRlI2ZQQXbBqIQ-r6pwWopnu3XkI5ajEvrK13cmLCa2UlfyJ4xrWMQDKs/pub?gid=52741811&single=true&output=tsv";
+    try {
+        const response = await fetch(url);
+        const text = await response.text();
+        console.log("Data yang diambil:", text);  // Debugging output
+        const rows = text.trim().split("\n").map(row => row.split("\t"));
+
+        const tableBody = document.getElementById("data-table");
+        tableBody.innerHTML = "";
+
+        rows.slice(1).forEach(row => {
+            let tr = document.createElement("tr");
+            row.forEach(cell => {
+                let td = document.createElement("td");
+                td.textContent = cell;
+                tr.appendChild(td);
+            });
+            tableBody.appendChild(tr);
+        });
+    } catch (error) {
+        console.error("Gagal mengambil data:", error);
+    }
+}
+
+        
+        function sortTable(n) {
+            const table = document.querySelector("table");
+            let rows = Array.from(table.rows).slice(1);
+            rows.sort((rowA, rowB) => rowA.cells[n].innerText.localeCompare(rowB.cells[n].innerText));
+            rows.forEach(row => table.appendChild(row));
+        }
+        
+        document.getElementById("search").addEventListener("input", function() {
+            let filter = this.value.toLowerCase();
+            document.querySelectorAll("tbody tr").forEach(row => {
+                row.style.display = row.textContent.toLowerCase().includes(filter) ? "" : "none";
+            });
+        });
+        
+        fetchData();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
