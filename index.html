@@ -124,9 +124,9 @@
                         $("#dataTable tbody").append(`
                             <tr>
                                 <td>${index + 1}</td>
-                                <td>${row.nama}</td>
+                                <td>${row.nama.toUpperCase()}</td>
                                 <td>${row.phone}</td>
-                                <td>${row.email}</td>
+                                <td>${row.email.toLowerCase()}</td>
                                 <td>${row.satuanKerja}</td>
                                 <td>${row.jabatan}</td>
                             </tr>
