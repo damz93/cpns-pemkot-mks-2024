@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <style>
         a{
             text-decoration: none;
@@ -85,8 +86,10 @@
 
     <script>
         // Ganti dengan ID spreadsheet Anda
-        const SPREADSHEET_ID = "1-YAGXVzCQosRtgXZDkHF_hgRy-O12ywHEfQ0kkuIb5Q";
-        const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv`;
+        // const SPREADSHEET_ID = "1-YAGXVzCQosRtgXZDkHF_hgRy-O12ywHEfQ0kkuIb5Q";
+        
+        // const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv`;
+        const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/e/2PACX-1vSvEzh0Ps5yeM9uGO5vuubyRlI2ZQQXbBqIQ-r6pwWopnu3XkI5ajEvrK13cmLCa2UlfyJ4xrWMQDKs/pub?gid=1107136817&single=true&output=csv`;
 
         // Ganti dengan Google Form prefilled link Anda
         const FORM_BASE_URL = "https://forms.gle/mWLnK4T1XVK9UTFZ7";
@@ -112,21 +115,24 @@
             fetch(SHEET_CSV_URL)
                 .then(response => response.text())
                 .then(csvText => {
-                    let rows = csvText.split("\n");
-                    faqData = rows.slice(1).map(row => row.split('","').map(cell => cell.replace(/(^"|"$)/g, '')));
+                    Papa.parse(csvText, {
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: function(results) {
+                        faqData = results.data.map(row => ({
 
-                    // Pastikan indeks yang benar untuk pertanyaan & jawaban
-                    faqData = faqData.map(item => ({
-                        question: item[3],
-                        answer: item[4]
+                    
+                        // question: item[3],
+                        // answer: item[4]
+                        question: row["Pertanyaan"] || row[3], 
+                        answer: row["Jawaban"] || row[4] 
                     }));
 
                     // Urutkan berdasarkan huruf pertama pertanyaan (A-Z)
                     faqData.sort((a, b) => a.question.localeCompare(b.question));
+ 
 
-                    let faqHTML = "";
-                    faqData.forEach((item, index) => {
-                        faqHTML += `
+                    let faqHTML = faqData.map((item, index) => `
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="heading${index}">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
@@ -139,12 +145,14 @@
                                     </div>
                                 </div>
                             </div>
-                        `;
-                    });
+                        `).join("");
 
-                    $("#faqAccordion").html(faqHTML);
-                })
-                .catch(error => {
+                        $("#faqAccordion").html(faqHTML);
+                    $("#faqAccordion").removeClass("d-none"); 
+                }
+            });
+        })
+        .catch(error => {
                     $("#faqAccordion").html("<p class='text-center text-danger'>Gagal mengambil data FAQ.</p>");
                     console.error("Error fetching FAQ:", error);
                 });
@@ -161,6 +169,8 @@
                 return;
             }
 
+            $("#faqAccordion").removeClass("d-none"); // Tampilkan daftar FAQ saat mengetik
+
             items.forEach(item => {
                 let question = item.querySelector(".accordion-button").textContent.toLowerCase();
                 if (question.includes(input)) {
@@ -171,15 +181,13 @@
                 }
             });
 
-            if (found) {
-                $("#faqAccordion").removeClass("d-none");
-                $("#noResult").addClass("d-none");
-            } else {
-                $("#faqAccordion").addClass("d-none");
+            if (!found) {
                 $("#noResult").removeClass("d-none");
-                $("#formLink").attr("href", FORM_BASE_URL + encodeURIComponent(input));
+            } else {
+                $("#noResult").addClass("d-none");
             }
         }
+
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
