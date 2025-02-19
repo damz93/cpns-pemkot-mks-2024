@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" href="https://e7.pngegg.com/pngimages/425/141/png-clipart-timer-countdown-alarm-clocks-clock-angle-timer.png" type="image/png"> -->
+    <link rel="shortcut icon" href="alarm.png" type="image/x-icon">
+
+     
+    <title>Kalender Event CPNS Pemkot Makassar 2024 | By Dedy A Muzawwir</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #A6D0DD;
+            font-family: 'Poppins', 'sans-serif';
+        }
+        .countdown-card {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .card {
+            background-color: rgb(236, 249, 255);
+        }
+        .countdown {
+            font-size: 1.5rem;
+            /* font-weight: bold; */
+            background-color:#00879E;
+            font-family: "Chakra Petch", serif;
+            padding: 5px;
+            color: #fdfdfd;
+        }
+        .event-past {
+            filter: grayscale(100%) blur(0.8px);
+        }
+        #loading {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        #countdownContainer{
+            width:100%;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-left: 0px;
+            /* align-items: center; */
+            /* min-height: 100vh; */
+        }
+       
+
+        
+            /* Mengubah warna favicon untuk tema gelap */
+            @media (prefers-color-scheme: dark) {
+                link[rel="icon"] {
+                filter: invert(1);
+                }
+            }
+            
+            /* Mengubah warna favicon untuk tema terang */
+            @media (prefers-color-scheme: light) {
+                link[rel="icon"] {
+                filter: none;
+                }
+            }
+            .btn-hover-scale:hover {
+                transform: scale(1.1);
+                transition: transform 0.2s ease-in-out;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="padding: 0;">
+        
+        <div class="p-3" style="background-color:#FFF9DE; position: sticky; top: 0; z-index: 1000;">
+            <a href="index.html" class="btn btn-primary mb-3 btn-hover-scale"> <<< Kembali ke Menu Utama</a>
+            <h2 class="text-center" style="color:#1e2425;font-weight:bold;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" height="34px" width="auto"> &nbsp;KALENDER EVENT</h2>
+            <p class="text-center" style="color:#1e2425;font-weight:400;">
+                <u>CPNS Pemerintah Kota Makassar 2024    </u>
+            </p>
+        </div>
+        
+
+        <div id="loading" class="text-center">
+            <p>Memuat data...</p>
+        </div>
+        <!-- <div id="countdownContainer" class="row text-center" style="width: 90%;padding: 2px;"></div> -->
+        <div id="countdownContainer" class="row mt-3">
+            <!-- Konten Anda di sini -->
+        </div>
+        
+    </div>
+
+    <!-- Modal untuk menampilkan deskripsi event -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#00879E;color:white" >
+                    <h5 class="modal-title" id="eventModalLabel">#Detail Event</h5>
+                    <button type="button" class="btn-close" style="background-color: white; color: black; border: 1px solid #ccc;" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="eventModalBody">
+                    <!-- Deskripsi Event akan ditampilkan di sini -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> <!-- Perhatikan ini -->
+
+    <script>
+        // Ganti ID spreadsheet sesuai dengan yang Anda miliki
+        const sheetID = "1mbdl7jm9O2cmSQBzYQTN3xwsy7W8zIsYDmaFc3cuidI";
+        const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
+
+        // Fungsi untuk mengambil data dari Google Sheets
+        // Fungsi untuk menampilkan countdown dalam kartu Bootstrap
+        async function fetchSheetData() {
+            try {
+                const response = await fetch(sheetURL);
+                const text = await response.text();
+                console.log("Raw Response:", text); // Debugging
+
+                if (!text.includes("google.visualization.Query.setResponse")) {
+                    throw new Error("Invalid response format from Google Sheets");
+                }
+
+                const jsonText = text.substring(47, text.length - 2); // Hapus pembungkus JSON
+                const jsonData = JSON.parse(jsonText);
+                console.log("Parsed JSON Data:", jsonData);
+
+                const rows = jsonData.table.rows;
+                console.log("Extracted Rows:", rows);
+
+                let events = rows.map(row => ({
+                    tanggal: row.c[2] ? parseGoogleSheetDate(row.c[2].v) : null,
+                    nama: row.c[3] ? row.c[3].v : "Tanpa Nama",
+                    deskripsi: row.c[4] ? row.c[4].v : ""
+                })).filter(event => event.tanggal !== null); // Hapus data tanpa tanggal
+
+                console.log("Processed Events:", events);
+
+                // Urutkan event berdasarkan tanggal yang lebih dulu
+                events.sort((a, b) => a.tanggal - b.tanggal);
+
+                // Memisahkan event yang sudah lewat dan yang akan datang
+                const pastEvents = events.filter(event => isEventPast(event.tanggal));
+                const upcomingEvents = events.filter(event => !isEventPast(event.tanggal));
+
+                // Urutkan pastEvents berdasarkan tanggal (ascending)
+                pastEvents.sort((a, b) => b.tanggal - a.tanggal); // Ascending for past events
+
+                // Batasi hanya 3 event yang sudah lewat
+                const limitedPastEvents = pastEvents.slice(0, 3);
+
+                // Gabungkan event yang akan datang dan event yang sudah lewat (maksimal 3)
+                const allEventsToDisplay = [...upcomingEvents, ...limitedPastEvents];
+
+                displayCountdown(allEventsToDisplay);
+            } catch (error) {
+                console.error("Error fetching Google Sheets data:", error);
+            }
+        }
+
+
+        // Fungsi untuk menampilkan countdown dalam kartu Bootstrap
+        function displayCountdown(events) {
+            const container = document.getElementById("countdownContainer");
+            const loading = document.getElementById("loading");
+            if (loading) loading.style.display = "none"; // Sembunyikan loading
+
+            container.innerHTML = ""; // Menghapus kontainer sebelumnya
+
+            // Memisahkan event yang sudah lewat dan yang akan datang
+            const pastEvents = events.filter(event => isEventPast(event.tanggal));
+            const upcomingEvents = events.filter(event => !isEventPast(event.tanggal));
+
+            // Batasi hanya 3 event yang sudah lewat
+            const limitedPastEvents = pastEvents.slice(0, 3);
+
+            // Gabungkan event yang akan datang dan event yang sudah lewat (maksimal 3)
+            const allEventsToDisplay = [...upcomingEvents, ...limitedPastEvents];
+
+            allEventsToDisplay.forEach(event => {
+                let eventDate = new Date(event.tanggal); // Pastikan tanggal sudah berbentuk Date
+                let eventId = `countdown-${event.nama.replace(/\s+/g, '-')}`;
+                
+                // Potong deskripsi menjadi 20 karakter
+                let truncatedDescription = event.deskripsi.length > 20 ? event.deskripsi.substring(0, 20) + "..." : event.deskripsi;
+
+                let card = `
+                    <div class="col-md-4">
+                        <div class="card countdown-card shadow-sm ${isEventPast(eventDate) ? 'event-past' : ''}">
+                            <div class="card-body text-center" onclick="showEventModal('${event.nama}', '${event.deskripsi}', '${eventDate.toISOString()}')">
+                                <h5 class="card-title">${event.nama}</h5>
+                                <p class="card-text">${truncatedDescription}</p>
+                                <p class="countdown" id="${eventId}">Menghitung...</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                container.innerHTML += card;
+                updateCountdown(eventId, eventDate);
+                setInterval(() => updateCountdown(eventId, eventDate), 1000);
+            });
+
+        }
+
+        // Fungsi untuk menampilkan deskripsi event dalam pop-up
+        // Fungsi untuk menampilkan deskripsi event dalam alert
+    function showEventAlert(eventName) {
+        const event = events.find(e => e.nama === eventName);
+        if (event) {
+            alert(`Deskripsi Event: ${event.deskripsi}`);
+        }
+    }
+
+// Fungsi untuk menampilkan modal dengan deskripsi event
+    function showEventModal(eventName, eventDescription, eventDate) {
+        const modalBody = document.getElementById("eventModalBody");
+
+        // Mengonversi string ISO kembali menjadi objek Date
+        eventDate = new Date(eventDate);
+
+        // Format tanggal dan waktu
+        const formattedDate = eventDate.toLocaleDateString('id-ID', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        const formattedTime = eventDate.toLocaleTimeString('id-ID', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        });
+
+        // Masukkan tanggal, jam, dan deskripsi ke dalam modal
+        modalBody.innerHTML = `
+            <p><strong>${eventName}</strong></p>
+            <p><strong>Tanggal:</strong> ${formattedDate}</p>
+            <p><strong>Jam:</strong> ${formattedTime} (Waktu Indonesia Tengah)</p>
+            <p>${eventDescription}</p>
+        `;
+
+        // Tampilkan modal
+        const eventModal = new bootstrap.Modal(document.getElementById("eventModal"));
+        eventModal.show();
+    }
+
+
+
+
+
+        // Fungsi untuk menampilkan modal dengan deskripsi event
+        function showEventDescription(eventName, eventDescription) {
+            const modalBody = document.getElementById("eventModalBody");
+            modalBody.innerHTML = `<p><strong>${eventName}</strong></p><p>${eventDescription}</p>`;
+
+            // Tampilkan modal
+            const eventModal = new bootstrap.Modal(document.getElementById("eventModal"));
+            eventModal.show();
+        }
+
+        // Fungsi untuk memperbarui countdown setiap detik
+        function updateCountdown(elementId, eventDate) {
+            const countdownElement = document.getElementById(elementId);
+            if (!countdownElement) {
+                console.error("Countdown element not found:", elementId);
+                return;
+            }
+
+            const now = new Date();
+            const timeDiff = eventDate - now;
+
+            if (timeDiff <= 0) {
+                // Menghitung berapa hari sudah berlalu setelah event dimulai
+                const daysSinceStart = Math.floor(Math.abs(timeDiff) / (1000 * 60 * 60 * 24));
+                countdownElement.innerHTML = `Event berlangsung ${daysSinceStart} hari yang lalu`;
+                return;
+            }
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}h ${hours}j ${minutes}m ${seconds}s`;
+
+            // Cek jika event sudah lebih dari satu hari lewat
+            if (timeDiff < -86400000) {  // Jika lebih dari satu hari sudah lewat
+                countdownElement.innerHTML = `Event berlangsung ${Math.floor(Math.abs(timeDiff) / (1000 * 60 * 60 * 24))} hari yang lalu`;
+            }
+        }
+
+        // Fungsi untuk mengonversi format "Date(YYYY, M, D, H, M, S)" ke objek Date JavaScript
+        function parseGoogleSheetDate(dateString) {
+            if (!dateString) {
+                console.error("Invalid date string:", dateString);
+                return null;
+            }
+
+            console.log("Parsing date:", dateString); // Debugging
+
+            // Mencari pola "Date(YYYY, M, D, H, M, S)"
+            const datePattern = /Date\((\d{4}),(\d{1,2}),(\d{1,2}),(\d{1,2}),(\d{1,2}),(\d{1,2})\)/;
+            const match = dateString.match(datePattern);
+
+            if (!match) {
+                console.error("Invalid date format:", dateString);
+                return null;
+            }
+
+            // Mengambil nilai tahun, bulan, tanggal, jam, menit, dan detik dari hasil match
+            const year = parseInt(match[1], 10);
+            const month = parseInt(match[2], 10); // Bulan dimulai dari 0 di JavaScript
+            const day = parseInt(match[3], 10);
+            const hours = parseInt(match[4], 10);
+            const minutes = parseInt(match[5], 10);
+            const seconds = parseInt(match[6], 10);
+
+            // Membuat objek Date dengan tahun, bulan, hari, jam, menit, dan detik
+            return new Date(year, month, day, hours, minutes, seconds);
+        }
+
+        // Cek jika event sudah lewat
+        function isEventPast(eventDate) {
+            const now = new Date();
+            return eventDate < now;
+        }
+
+        // Mulai Fetch Data
+        document.addEventListener("DOMContentLoaded", function() {
+            fetchSheetData();
+        });
+    </script>
+
+</body>
+</html>

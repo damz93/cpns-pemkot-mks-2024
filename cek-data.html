@@ -46,11 +46,18 @@
                 white-space: nowrap;
             }
         }
+        .btn-hover-scale:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease-in-out;
+        }
 
 
     </style>
 </head>
 <body class="bg-light d-flex flex-column justify-content-center align-items-center">
+    <div class="container mt-3">
+        <a href="index.html" class="btn btn-primary mb-3 btn-hover-scale"> <<< Kembali ke Menu Utama</a>
+    </div>
     <div class="popup-container" id="popup">
         <div class="popup-box">
             <h2 style="font-weight: bold;">~ Persetujuan ~</h2>
