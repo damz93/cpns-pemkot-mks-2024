@@ -181,12 +181,15 @@ footer {
 
 
     <!-- Footer dengan teks berjalan -->
-    <footer class="bg-dark text-white text-center py-2 fixed-bottom">
+    <footer class="bg-dark text-white text-center fixed-bottom d-flex align-items-center justify-content-center" style="height: 50px;">
         <marquee id="marqueeText" behavior="scroll" direction="left" 
-            onmouseover="this.stop();" onmouseout="this.start();">
-            <p style="font-size: 0.9rem;">Memuat informasi...</p>
+            onmouseover="this.stop();" onmouseout="this.start();" 
+            class="w-100" style="font-size: 0.9rem; font-style: italic;">
+            Memuat informasi...
         </marquee>
     </footer>
+    
+    
     
     <script>
         const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvEzh0Ps5yeM9uGO5vuubyRlI2ZQQXbBqIQ-r6pwWopnu3XkI5ajEvrK13cmLCa2UlfyJ4xrWMQDKs/pub?gid=598428421&single=true&output=csv";
