@@ -10,6 +10,8 @@
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+     <!-- Font Awesome -->
+     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/js/all.min.js"></script>
     <style>
         body { font-family: 'Poppins', sans-serif; }
         .popup-container {
@@ -102,7 +104,7 @@
         <div class="col-md-4">
             <div class="card text-white bg-primary mb-3">
                 <div class="card-body justify-content-center">
-                    <h5 class="card-title">#Total Keseluruhan</h5>
+                    <h5 class="card-title"><i class="fa-solid fa-check-double"></i>&nbsp;Total Keseluruhan</h5>
                     <p class="card-text" id="totalSeharusnya">0</p>
                     <br>
                 </div>
@@ -111,7 +113,7 @@
         <div class="col-md-4">
             <div class="card text-white bg-success mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">#Total Sudah Input</h5>
+                    <h5 class="card-title"><i class="fa-solid fa-square-check"></i>&nbsp;Total Sudah Input</h5>
                     <p class="card-text" id="totalSudahInput">0</p>
                     <p class="card-text"><small>(<span id="persenSudahInput">0</span>%)</small></p>
                 </div>
@@ -121,7 +123,7 @@
         <div class="col-md-4">
             <div class="card text-white bg-danger mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">#Total Belum Input</h5>
+                    <h5 class="card-title"><i class="fa-solid fa-hand-dots"></i>&nbsp;Total Belum Input</h5>
                     <p class="card-text" id="totalBelumInput">0</p>
                     <p class="card-text"><small>(<span id="persenBelumInput">0</span>%)</small></p>
                 </div>
