@@ -40,13 +40,19 @@
             background: url('https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
             backdrop-filter: blur(3px);
             color: white;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             font-family: 'Poppins', sans-serif;
         }
+footer {
+    width: 100%;
+}
+
 /* 
         body::before {
             content: "";
@@ -117,17 +123,7 @@
             }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script>
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 50 },
-                shape: { type: "circle" },
-                size: { value: 3 },
-                move: { enable: true, speed: 2 }
-            }
-        });
-    </script>
+  
     <script>
         const text = "Cari apaki, ces?";
         let index = 0;
@@ -147,7 +143,7 @@
     
     <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
     <div class="container h-100 d-flex flex-column align-items-center">        
-       <img class="m-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" width="120" height="auto" alt="">
+       <a href="https://damz93.github.io/cpns-pemkot-mks-2024/"><img class="m-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" width="120" height="auto" alt=""></a>
        <div class="speech-bubble" id="typing-text"></div>
 
 
@@ -181,6 +177,71 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- Footer dengan teks berjalan -->
+    <footer class="bg-dark text-white text-center py-2 fixed-bottom">
+        <marquee id="marqueeText" behavior="scroll" direction="left" 
+            onmouseover="this.stop();" onmouseout="this.start();">
+            <p style="font-size: 0.9rem;">Memuat informasi...</p>
+        </marquee>
+    </footer>
+    
+    <script>
+        const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvEzh0Ps5yeM9uGO5vuubyRlI2ZQQXbBqIQ-r6pwWopnu3XkI5ajEvrK13cmLCa2UlfyJ4xrWMQDKs/pub?gid=598428421&single=true&output=csv";
+    
+        let messages = [];
+        let currentIndex = 0;
+    
+        async function fetchSpreadsheetData() {
+            try {
+                const response = await fetch(sheetUrl);
+                const data = await response.text();
+                if (!data) throw new Error("CSV kosong atau tidak dapat diakses");
+    
+                // Parsing CSV ke array
+                const rows = data.split("\n").map(row => row.split(","));
+                if (!rows || rows.length === 0) throw new Error("Format CSV tidak valid");
+    
+                // Ambil kolom kedua (index 1) sebagai teks dan kolom ketiga (index 2) sebagai penulis
+                messages = rows.map(row => {
+                    const text = row[1]?.trim();
+                    const author = row[2]?.trim();
+                    return text && author ? `"${text}" - ${author}` : text;
+                }).filter(text => text);
+    
+                if (messages.length > 0) {
+                    currentIndex = Math.floor(Math.random() * messages.length);
+                    document.getElementById("marqueeText").textContent = messages[currentIndex];
+                } else {
+                    document.getElementById("marqueeText").textContent = "Tidak ada data tersedia.";
+                }
+            } catch (error) {
+                console.error("Gagal mengambil data:", error);
+                document.getElementById("marqueeText").textContent = "Gagal memuat informasi.";
+            }
+        }
+    
+        function updateMarqueeText() {
+            if (messages.length === 0) return;
+    
+            // Pindah ke pesan berikutnya secara acak
+            currentIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById("marqueeText").textContent = messages[currentIndex];
+        }
+    
+        // Panggil pertama kali saat halaman dimuat
+        fetchSpreadsheetData();
+    
+        // Ganti teks setelah marquee selesai berjalan
+        document.getElementById("marqueeText").addEventListener("animationiteration", updateMarqueeText);
+    
+        // Perbarui data dari Google Sheets setiap 5 menit
+        setInterval(fetchSpreadsheetData, 150000);
+    </script>
+        
+
 </body>
 
 </html>
