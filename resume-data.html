@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data CPNS Pemkot Makassar 2024 | by Dedy A Muzawwir</title>
+    <title>Resume Input | Data CPNS Pemkot Makassar 2024 | by Dedy A Muzawwir</title>
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -79,19 +79,19 @@
     </script>
 
     <div style="background-color:#EEEEEE;width: 100%; text-align: center;" >
-        <a href="https://damz93.github.io/data-cpns-pemkot-mks-2024" target="_self"><img class="p-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" width="100" height="110" alt=""></a>
-        <h3 class="mb-3" style="font-weight: bold;">Daftar CPNS Pemerintah Kota Makassar - 2024</h3>
+        <a href="https://damz93.github.io/data-cpns-pemkot-mks-2024" target="_self"><img class="p-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" width="100" height="auto" alt=""></a>
+        <h3 class="mb-3" style="font-weight: bold;">Resume Input | Data CPNS Pemerintah Kota Makassar - 2024</h3>
     </div>
     <div class="table-responsive">
         <table id="dataTable" class="table table-striped table-hover table-bordered">
             <thead class="table-dark">
                 <tr>
                     <th>No</th>
-                    <th>Nama</th>
-                    <th>Phone</th>
-                    <th>Email</th>
                     <th>Satuan Kerja</th>
-                    <th>Jabatan</th>
+                    <th>Total Harusnya</th>
+                    <th>Jumlah Yang sudah Input</th>
+                    <th>Belum Input</th>
+                    <th>Keterangan</th>
                 </tr>
         </thead>
         <tbody></tbody>
@@ -99,48 +99,52 @@
 
     <script>
         $(document).ready(function() {
-            let sheetUrl = "https://docs.google.com/spreadsheets/d/1pcwE1QG0zuQSgajTKFLqOjdHliTDxAwP0t11FkDR0XM/gviz/tq?tqx=out:json";
+    let sheetUrl = "https://docs.google.com/spreadsheets/d/1pcwE1QG0zuQSgajTKFLqOjdHliTDxAwP0t11FkDR0XM/gviz/tq?tqx=out:json&sheet=resume%20input";
 
-            $.get(sheetUrl, function(data) {
-                let jsonData = data.match(/google\.visualization\.Query\.setResponse\((.*)\);/);
-                if (jsonData && jsonData[1]) {
-                    let sheetData = JSON.parse(jsonData[1]).table.rows;
-                    
-                    let formattedData = sheetData.map((row, index) => ({
-                        nama: row.c[2] ? row.c[2].v : "",
-                        phone: row.c[3] ? row.c[3].v : "",
-                        email: row.c[3] ? row.c[1].v : "",
-                        satuanKerja: row.c[6] ? row.c[6].v :"",
-                        jabatan: row.c[5] ? row.c[5].v : ""
-                    })).sort((a, b) => {
-                        let skCompare = a.satuanKerja.localeCompare(b.satuanKerja);
-                        if (skCompare !== 0) {
-                            return skCompare;
-                        }
-                        return a.jabatan.localeCompare(b.jabatan);
-                    });
-                    
-                    formattedData.forEach((row, index) => {
-                        $("#dataTable tbody").append(`
-                            <tr>
-                                <td>${index + 1}</td>
-                                <td>${row.nama.toUpperCase()}</td>
-                                <td>${row.phone}</td>
-                                <td>${row.email.toLowerCase()}</td>
-                                <td>${row.satuanKerja}</td>
-                                <td>${row.jabatan}</td>
-                            </tr>
-                        `);
-                    });
-                    
-                    let table = $('#dataTable').DataTable();
-                    
-                    $('#searchBox').on('keyup', function() {
-                        table.search(this.value).draw();
-                    });
+    $.get(sheetUrl, function(data) {
+        let jsonData = data.match(/google\.visualization\.Query\.setResponse\((.*)\);/);
+        if (jsonData && jsonData[1]) {
+            let sheetData = JSON.parse(jsonData[1]).table.rows;
+
+            let formattedData = sheetData.map((row, index) => ({
+                nama_satker: row.c[1] ? row.c[1].v : "",
+                total_harusnya: row.c[2] ? row.c[2].v : "",
+                done_input: row.c[3] ? row.c[3].v : "",
+                not_input: row.c[4] ? row.c[4].v : "",
+                ket: row.c[5] ? row.c[5].v : ""
+            })).sort((a, b) => {
+                let skCompare = (a.nama_satker || "").localeCompare(b.nama_satker || "");
+                if (skCompare !== 0) {
+                    return skCompare;
                 }
+                return a.ket.localeCompare(b.ket);
             });
-        });
+
+            formattedData.forEach((row, index) => {
+                $("#dataTable tbody").append(`
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${row.nama_satker.toUpperCase()}</td>
+                        <td>${row.total_harusnya}</td>
+                        <td>${row.done_input}</td>
+                        <td>${row.not_input}</td>
+                        <td>${row.ket}</td>
+                    </tr>
+                `);
+            });
+
+            // Inisialisasi DataTables dengan default 100 baris
+            let table = $('#dataTable').DataTable({
+                pageLength: 100 // Set default show 100 rows
+            });
+
+            $('#searchBox').on('keyup', function() {
+                table.search(this.value).draw();
+            });
+        }
+    });
+});
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
