@@ -13,7 +13,14 @@
      <!-- Font Awesome -->
      <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/js/all.min.js"></script>
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
         .popup-container {
             position: fixed;
             top: 0;
@@ -30,10 +37,16 @@
         .card{
             transition: transform 0.2s ease-in-out;
             width: 100%;
+            border-radius: 15px 15px 10px 10px;
+            opacity: 0.85;
+            text-align: center;
+            justify-content: center;
 
         }
         .card:hover{
             transform: scale(1.1);
+            border-radius: 10px;
+            opacity: 1;
         }
         .popup-box {
             background: white;
@@ -100,7 +113,8 @@
         <h3 class="mb-3" style="font-weight: bold;">Resume | Data CPNS Pemerintah Kota Makassar - 2024</h3>
     </div>
 
-    <div class="row text-center" style="width: 100%;">
+    <div class="d-flex justify-content-center align-items-center" style="width: 100%;">
+
         <div class="col-md-4">
             <div class="card text-white bg-primary mb-3">
                 <div class="card-body justify-content-center">
