@@ -148,7 +148,7 @@
                         `).join("");
 
                         $("#faqAccordion").html(faqHTML);
-                    $("#faqAccordion").removeClass("d-none"); 
+                        // $("#faqAccordion").removeClass("d-none"); // Menampilkan daftar FAQ sejak awal
                 }
             });
         })
@@ -163,11 +163,16 @@
             let items = document.querySelectorAll(".accordion-item");
             let found = false;
 
-            if (input === "") {
+            if (input.trim() === "") {
                 $("#faqAccordion").addClass("d-none");
                 $("#noResult").addClass("d-none");
                 return;
             }
+            if (faqData.length > 0) {
+                $("#faqAccordion").removeClass("d-none");
+            }
+
+
 
             $("#faqAccordion").removeClass("d-none"); // Tampilkan daftar FAQ saat mengetik
 
