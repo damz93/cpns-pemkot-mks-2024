@@ -202,11 +202,14 @@
             const upcomingEvents = events.filter(event => !isEventPast(event.tanggal));
 
             // Batasi hanya 3 event yang sudah lewat
-            const limitedPastEvents = pastEvents.slice(0, 3);
+            const limitedComingEvents = upcomingEvents.slice(0, 15);
+            const limitedPastEvents = pastEvents.slice(0, 6);
+                        
+            const allEventsToDisplay = [...limitedComingEvents, ...limitedPastEvents].slice(0, 21); // Hanya tampilkan 21 kartu
 
-            // Gabungkan event yang akan datang dan event yang sudah lewat (maksimal 3)
-            const allEventsToDisplay = [...upcomingEvents, ...limitedPastEvents];
 
+
+            let card = "";
             allEventsToDisplay.forEach(event => {
                 let eventDate = new Date(event.tanggal); // Pastikan tanggal sudah berbentuk Date
                 let eventId = `countdown-${event.nama.replace(/\s+/g, '-')}`;
@@ -214,7 +217,7 @@
                 // Potong deskripsi menjadi 20 karakter
                 let truncatedDescription = event.deskripsi.length > 20 ? event.deskripsi.substring(0, 20) + "..." : event.deskripsi;
 
-                let card = `
+                card = `
                     <div class="col-md-4">
                         <div class="card countdown-card shadow-sm ${isEventPast(eventDate) ? 'event-past' : ''}">
                             <div class="card-body text-center" onclick="showEventModal('${event.nama}', '${event.deskripsi}', '${eventDate.toISOString()}')">
@@ -226,10 +229,12 @@
                     </div>
                 `;
 
+                // container.innerHTML += card;
                 container.innerHTML += card;
                 updateCountdown(eventId, eventDate);
                 setInterval(() => updateCountdown(eventId, eventDate), 1000);
             });
+            
 
         }
 
@@ -304,16 +309,16 @@
             const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
             countdownElement.innerHTML = `${days}h ${hours}j ${minutes}m ${seconds}s`;
-
-            if (timeDiff < -86400000) {  // Jika lebih dari satu hari sudah lewat
-                countdownElement.innerHTML = `Event telah berlangsung ${Math.floor(Math.abs(timeDiff) / (1000 * 60 * 60 * 24))} hari yang lalu`;
-            }
-            else if (timeDiff <= 0) {
+             if (timeDiff <= 0) {
                 countdownElement.innerHTML = `🎉 Event Sedang Berlangsung! 🎉`;
                 startFireworks();  // Mulai efek kembang api saat event berlangsung
                 
-                return;
             }
+            
+                        else if (timeDiff < -86400000) {  // Jika lebih dari satu hari sudah lewat
+                            countdownElement.innerHTML = `Event telah berlangsung ${Math.floor(Math.abs(timeDiff) / (1000 * 60 * 60 * 24))} hari yang lalu`;
+                            
+                        }
 
 
             // Cek jika event sudah lebih dari satu hari lewat
@@ -358,6 +363,7 @@
         // Mulai Fetch Data
         document.addEventListener("DOMContentLoaded", function() {
             fetchSheetData();
+            console.time("fetchData")
         });
     </script>
 
