@@ -16,6 +16,12 @@
             color: white;
             padding : 3px;
         }
+        a.no-style {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+            text-decoration: none;
+        }
         .btn-hover-scale:hover {
             transform: scale(1.1);
             transition: transform 0.2s ease-in-out;
@@ -32,14 +38,17 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid" style="width: 100%; text-align: left;" >
-        <a href="index.html" class="btn btn-primary m-3 btn-hover-scale"> <<< Kembali ke Menu Utama</a>
-    </div>
     <div class="container mt-5">
-        <div class="card shadow-sm p-3">
-            <h2 class="fs-5 fw-bold text-light p-3" style="background-color: rgb(7, 42, 73); text-align: center;font-weight: bold;">
-                F  A  Q <br> CPNS Pemkot Makassar 2024 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" height="30" width="auto">
-              </h2>            
+        <div class="card shadow-sm p-3" style="background-color: aliceblue;">
+            
+            <h3 class="text-center" style="background-color:rgb(7, 42, 73);color:white;font-weight:bold;padding: 10px;">
+                <a href="index.html" class="no-style">
+                    <img title="Kembali ke Menu Utama" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" height="80px" width="auto">
+                </a>
+                <br>
+                F A Q <br><p style="font-size: 0.9rem;"> CPNS Pemkot Makassar 2024</p>
+            </h3>
+            
             
             <input autofocus autocomplete="off" type="text" id="searchBox" class="form-control mb-3" placeholder="Cari pertanyaan..." onkeyup="filterFAQ()">
             
