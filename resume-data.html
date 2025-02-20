@@ -34,15 +34,36 @@
             justify-content: center;
             z-index: 9999;
         }
-        .card{
+        /* .card{
             transition: transform 0.2s ease-in-out;
             width: 100%;
-            border-radius: 15px 15px 10px 10px;
-            opacity: 0.85;
-            text-align: center;
+            border-radius: 10px 10px 10px 10px;
+            opacity: 0.80;
+            text-align: left;
+            height: auto;
+            font-size: 0.7rem;
             justify-content: center;
-
         }
+
+ */
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Memberikan sedikit jarak antar card */
+        }
+
+        .card {
+            transition: transform 0.2s ease-in-out;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            font-size: 0.7rem;
+            border-radius: 10px 10px 10px 10px;
+            justify-content: space-between; /* Menjaga isi card tetap rapi */
+            height: 100%; /* Pastikan semua card sama tinggi */
+        }
+
         .card:hover{
             transform: scale(1.1);
             border-radius: 10px;
@@ -69,6 +90,12 @@
                 white-space: nowrap;
             }
         }
+        @media (max-width: 1024px) { /* Ukuran tipikal laptop */
+            body {
+                height: 150vh;
+            }
+        }
+
         .btn-hover-scale:hover {
             transform: scale(1.1);
             transition: transform 0.3s ease-in-out;
@@ -112,38 +139,35 @@
         <a href="https://damz93.github.io/data-cpns-pemkot-mks-2024" target="_self"><img class="p-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" width="100" height="auto" alt=""></a>
         <h3 class="mb-3" style="font-weight: bold;">Resume | Data CPNS Pemerintah Kota Makassar - 2024</h3>
     </div>
-
-    <div class="d-flex justify-content-center align-items-center" style="width: 100%;">
-
-        <div class="col-md-4">
-            <div class="card text-white bg-primary mb-3">
-                <div class="card-body justify-content-center">
-                    <h5 class="card-title"><i class="fa-solid fa-check-double"></i>&nbsp;Total Keseluruhan</h5>
-                    <p class="card-text" id="totalSeharusnya">0</p>
-                    <br>
+    <div class="container-fluid" style="width: 93%;">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-12 mb-3">
+                <div class="card text-white" style="background-color:#C1121F ">
+                    <div class="card-body text-start">
+                        <p class="card-text" id="totalKebutuhan">0</p>
+                        <p class="card-text" id="totalKosong">0</p>                   
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-3">
+                <div class="card text-white" style="background-color: #023E8A ;">
+                    <div class="card-body text-start">
+                        <p class="card-text" id="totalSeharusnya">0</p>
+                        <p class="card-text" id="totalSudahInput">0</p>
+                        <p class="card-text" id="totalBelumInput">0</p>                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-3">
+                <div class="card text-white" style="background-color: #d8a409 ;">
+                    <div class="card-body text-start">
+                        <p class="card-text" id="totalSatker">0</p>
+                        <p class="card-text" id="totalSatkerDone">0</p>
+                        <p class="card-text" id="totalSatkerBelum">0</p>                    
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card text-white bg-success mb-3">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fa-solid fa-square-check"></i>&nbsp;Total Sudah Input</h5>
-                    <p class="card-text" id="totalSudahInput">0</p>
-                    <p class="card-text"><small>(<span id="persenSudahInput">0</span>%)</small></p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-4">
-            <div class="card text-white bg-danger mb-3">
-                <div class="card-body">
-                    <h5 class="card-title"><i class="fa-solid fa-hand-dots"></i>&nbsp;Total Belum Input</h5>
-                    <p class="card-text" id="totalBelumInput">0</p>
-                    <p class="card-text"><small>(<span id="persenBelumInput">0</span>%)</small></p>
-                </div>
-            </div>
-        </div>
-        
     </div>
 
     <div class="table-responsive">
@@ -162,52 +186,73 @@
     </table>
 
     <script>
-        $(document).ready(function() {
-            let sheetUrl = "https://docs.google.com/spreadsheets/d/1pcwE1QG0zuQSgajTKFLqOjdHliTDxAwP0t11FkDR0XM/gviz/tq?tqx=out:json&sheet=resume%20input";
-            
-            $.get(sheetUrl, function(data) {
-                let jsonData = data.match(/google\.visualization\.Query\.setResponse\((.*)\);/);
-                if (jsonData && jsonData[1]) {
-                    let sheetData = JSON.parse(jsonData[1]).table.rows;
-                    let totalSeharusnya = 0, totalSudahInput = 0, totalBelumInput = 0;
-                    
-                    let formattedData = sheetData.map((row, index) => {
-                        let total = row.c[2] ? parseInt(row.c[2].v) : 0;
-                        let done = row.c[3] ? parseInt(row.c[3].v) : 0;
-                        let notDone = total - done;
-                        
-                        totalSeharusnya += total;
-                        totalSudahInput += done;
-                        totalBelumInput += notDone;
-                        
-                        return `
-                            <tr>
-                                <td>${index + 1}</td>
-                                <td>${row.c[1] ? row.c[1].v.toUpperCase() : ""}</td>
-                                <td>${total}</td>
-                                <td>${done}</td>
-                                <td>${notDone}</td>
-                                <td>${row.c[5] ? row.c[5].v : ""}</td>
-                            </tr>
-                        `;
-                    });
+       $(document).ready(function() {
+    let sheetUrl = "https://docs.google.com/spreadsheets/d/1pcwE1QG0zuQSgajTKFLqOjdHliTDxAwP0t11FkDR0XM/gviz/tq?tqx=out:json&sheet=resume%20input";
 
-                    $("#dataTable tbody").html(formattedData.join(""));
-                    $("#totalSeharusnya").text(totalSeharusnya);
-                    $("#totalSudahInput").text(totalSudahInput);
-                    $("#totalBelumInput").text(totalBelumInput);
-                    
-                    // Menghitung persentase
-                    let persenSudahInput = totalSeharusnya > 0 ? ((totalSudahInput / totalSeharusnya) * 100).toFixed(2) : 0;
-                    let persenBelumInput = totalSeharusnya > 0 ? ((totalBelumInput / totalSeharusnya) * 100).toFixed(2) : 0;
-                    
-                    $("#persenSudahInput").text(persenSudahInput);
-                    $("#persenBelumInput").text(persenBelumInput);
-                    
-                    $('#dataTable').DataTable({ pageLength: 100 });
+    $.get(sheetUrl, function(data) {
+        let jsonData = data.match(/google\.visualization\.Query\.setResponse\((.*)\);/);
+        if (jsonData && jsonData[1]) {
+            let sheetData = JSON.parse(jsonData[1]).table.rows;
+            let totalSeharusnya = 0, totalSudahInput = 0, totalBelumInput = 0;
+            let totalSatker = 70, totalSatkerDone = 0;
+
+            let formattedData = sheetData.map((row, index) => {
+                let total = row.c[2] ? parseInt(row.c[2].v) : 0;
+                let done = row.c[3] ? parseInt(row.c[3].v) : 0;
+                let notDone = total - done;
+
+                totalSeharusnya += total;
+                totalSudahInput += done;
+                totalBelumInput += notDone;
+
+                // **Menghitung Satker yang sudah input**
+                let satkerStatus = row.c[5] ? row.c[5].v : "";  // Kolom ke-5 untuk status
+                if (satkerStatus.trim() !== "BELUM") {
+                    totalSatkerDone++;
                 }
+
+                return `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${row.c[1] ? row.c[1].v.toUpperCase() : ""}</td>
+                        <td>${total}</td>
+                        <td>${done}</td>
+                        <td>${notDone}</td>
+                        <td>${satkerStatus}</td>
+                    </tr>
+                `;
             });
-        });
+
+            // **Menghitung Satker yang belum input**
+            let totalSatkerBelum = totalSatker - totalSatkerDone;
+
+            // **Menghitung persentase per Orang**
+            let persenSudahInput = totalSeharusnya > 0 ? ((totalSudahInput / totalSeharusnya) * 100).toFixed(2) : 0;
+            let persenBelumInput = totalSeharusnya > 0 ? ((totalBelumInput / totalSeharusnya) * 100).toFixed(2) : 0;
+
+            // **Menghitung persentase per SatKer**
+            let persenSatkerSudahInput = totalSatker > 0 ? ((totalSatkerDone / totalSatker) * 100).toFixed(2) : 0;
+            let persenSatkerBelumInput = totalSatker > 0 ? ((totalSatkerBelum / totalSatker) * 100).toFixed(2) : 0;
+
+            $("#persenSudahInput").text(persenSudahInput);
+            $("#persenBelumInput").text(persenBelumInput);
+
+            $("#dataTable tbody").html(formattedData.join(""));
+            $("#totalKebutuhan").text('Total Kebutuhan: 186 orang');
+            $("#totalKosong").text('Total Kebutuhan yang Kosong: 18 orang');
+            $("#totalSeharusnya").text('Total Lulus P/L: '+totalSeharusnya+' orang');
+            $("#totalSudahInput").text('Total Sudah Input GForm: '+totalSudahInput+' orang ('+persenSudahInput+'%)');
+            $("#totalBelumInput").text('Total Belum Input GForm: '+totalBelumInput+' orang ('+persenBelumInput+'%)');
+
+            $("#totalSatker").text('Total Satker: 70 SatKer');
+            $("#totalSatkerDone").text('Total Satker Input GForm: '+totalSatkerDone+' SatKer ('+persenSatkerSudahInput+'%)');
+            $("#totalSatkerBelum").text('Total Satker Belum Input GForm: '+totalSatkerBelum+' SatKer ('+persenSatkerBelumInput+'%)');
+
+            $('#dataTable').DataTable({ pageLength: 100 });
+        }
+    });
+});
+
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
