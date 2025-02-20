@@ -51,7 +51,7 @@
             width:100%;
             padding: 5px;
             display: flex;
-            justify-content: center;
+            justify-content: left;
             text-align: center;
             margin-left: 0px;
             /* align-items: center; */
@@ -78,23 +78,37 @@
                 transition: transform 0.2s ease-in-out;
             }
 
+            #fireworksCanvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                pointer-events: none; /* Agar tidak mengganggu interaksi pengguna */
+            }
+
     </style>
 </head>
 <body>
+
+
     <div class="container-fluid" style="padding: 0;">
-        
         <div class="p-3" style="background-color:aliceblue; position: sticky; top: 0; z-index: 1000;">
             <a href="index.html" class="btn btn-primary mb-3 btn-hover-scale"> <<< Kembali ke Menu Utama</a>
-            <h2 class="text-center" style="color:#1e2425;font-weight:bold;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" height="34px" width="auto"> &nbsp;KALENDER EVENT</h2>
+            <h2 class="text-center" style="color:#1e2425;font-weight:bold;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" height="40px" width="auto"> &nbsp;KALENDER EVENT</h2>
             <p class="text-center" style="color:#1e2425;font-weight:400;">
                 <u>CPNS Pemerintah Kota Makassar 2024    </u>
             </p>
         </div>
         
 
+        <canvas id="fireworksCanvas"></canvas>
         <div id="loading" class="text-center">
             <p>Memuat data...</p>
+            
         </div>
+
+        
         <!-- <div id="countdownContainer" class="row text-center" style="width: 90%;padding: 2px;"></div> -->
         <div id="countdownContainer" class="row mt-3">
             <!-- Konten Anda di sini -->
@@ -125,10 +139,7 @@
         // const sheetURL = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
         const sheetURL = `https://docs.google.com/spreadsheets/d/1pcwE1QG0zuQSgajTKFLqOjdHliTDxAwP0t11FkDR0XM/gviz/tq?tqx=out:json&gid=1636637928`;
 
-        // const sheetURL = `https://docs.google.com/spreadsheets/d/1pcwE1QG0zuQSgajTKFLqOjdHliTDxAwP0t11FkDR0XM/gviz/tq?tqx=out:json&gid=1636637928`;
-
-        // Fungsi untuk mengambil data dari Google Sheets
-        // Fungsi untuk menampilkan countdown dalam kartu Bootstrap
+        
         async function fetchSheetData() {
             try {
                 const response = await fetch(sheetURL);
@@ -154,27 +165,26 @@
 
                 console.log("Processed Events:", events);
 
-                // Urutkan event berdasarkan tanggal yang lebih dulu
+                // Urutkan event berdasarkan tanggal (lebih lama ke lebih baru)
                 events.sort((a, b) => a.tanggal - b.tanggal);
 
-                // Memisahkan event yang sudah lewat dan yang akan datang
-                const pastEvents = events.filter(event => isEventPast(event.tanggal));
-                const upcomingEvents = events.filter(event => !isEventPast(event.tanggal));
+                // **Pisahkan event masa lalu dan masa depan**
+                const now = new Date();
+                const pastEvents = events.filter(event => event.tanggal < now);
+                const upcomingEvents = events.filter(event => event.tanggal >= now);
 
-                // Urutkan pastEvents berdasarkan tanggal (ascending)
-                pastEvents.sort((a, b) => b.tanggal - a.tanggal); // Ascending for past events
+                // **Ambil maksimal 3 event yang sudah lewat (dari yang terbaru ke yang lama)**
+                const pastEventsLimited = pastEvents.reverse().slice(0, 3);
 
-                // Batasi hanya 3 event yang sudah lewat
-                const limitedPastEvents = pastEvents.slice(0, 3);
-
-                // Gabungkan event yang akan datang dan event yang sudah lewat (maksimal 3)
-                const allEventsToDisplay = [...upcomingEvents, ...limitedPastEvents];
+                // **Gabungkan event yang sudah lewat duluan, lalu event yang akan datang**
+                const allEventsToDisplay = [...pastEventsLimited, ...upcomingEvents];
 
                 displayCountdown(allEventsToDisplay);
             } catch (error) {
                 console.error("Error fetching Google Sheets data:", error);
             }
         }
+
 
 
         // Fungsi untuk menampilkan countdown dalam kartu Bootstrap
@@ -280,21 +290,12 @@
         // Fungsi untuk memperbarui countdown setiap detik
         function updateCountdown(elementId, eventDate) {
             const countdownElement = document.getElementById(elementId);
-            if (!countdownElement) {
-                console.error("Countdown element not found:", elementId);
-                return;
-            }
+            if (!countdownElement) return;
 
             const now = new Date();
             const timeDiff = eventDate - now;
 
-            if (timeDiff <= 0) {
-                // Menghitung berapa hari sudah berlalu setelah event dimulai
-                const daysSinceStart = Math.floor(Math.abs(timeDiff) / (1000 * 60 * 60 * 24));
-                countdownElement.innerHTML = `Event berlangsung ${daysSinceStart} hari yang lalu`;
-                return;
-            }
-
+            
             const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
@@ -302,12 +303,20 @@
 
             countdownElement.innerHTML = `${days}h ${hours}j ${minutes}m ${seconds}s`;
 
-            // Cek jika event sudah lebih dari satu hari lewat
             if (timeDiff < -86400000) {  // Jika lebih dari satu hari sudah lewat
-                countdownElement.innerHTML = `Event berlangsung ${Math.floor(Math.abs(timeDiff) / (1000 * 60 * 60 * 24))} hari yang lalu`;
+                countdownElement.innerHTML = `Event telah berlangsung ${Math.floor(Math.abs(timeDiff) / (1000 * 60 * 60 * 24))} hari yang lalu`;
             }
-        }
+            else if (timeDiff <= 0) {
+                countdownElement.innerHTML = `🎉 Event Sedang Berlangsung! 🎉`;
+                startFireworks();  // Mulai efek kembang api saat event berlangsung
+                
+                return;
+            }
 
+
+            // Cek jika event sudah lebih dari satu hari lewat
+            
+        }
         // Fungsi untuk mengonversi format "Date(YYYY, M, D, H, M, S)" ke objek Date JavaScript
         function parseGoogleSheetDate(dateString) {
             if (!dateString) {
@@ -341,14 +350,87 @@
         // Cek jika event sudah lewat
         function isEventPast(eventDate) {
             const now = new Date();
-            return eventDate < now;
+            const timeDiff = now - eventDate;
+            return timeDiff > 86400000; // 1 hari dalam milidetik
         }
-
         // Mulai Fetch Data
         document.addEventListener("DOMContentLoaded", function() {
             fetchSheetData();
         });
     </script>
 
+    <!-- kembang api -->
+     <script>
+
+class Firework {
+    constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.radius = Math.random() * 3 + 2;
+        this.vx = Math.random() * 4 - 2;
+        this.vy = Math.random() * 4 - 2;
+        this.alpha = 1;
+    }
+
+    update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.alpha -= 0.02;
+    }
+
+    draw(ctx) {
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    }
+}
+
+const canvas = document.getElementById("fireworksCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let fireworks = [];
+
+function createFirework() {
+    for (let i = 0; i < 20; i++) {
+        let x = Math.random() * canvas.width;
+        let y = Math.random() * canvas.height;
+        let color = `hsl(${Math.random() * 360}, 100%, 60%)`;
+        fireworks.push(new Firework(x, y, color));
+    }
+}
+
+function animateFireworks() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    fireworks.forEach((firework, index) => {
+        firework.update();
+        firework.draw(ctx);
+        if (firework.alpha <= 0) {
+            fireworks.splice(index, 1);
+        }
+    });
+    requestAnimationFrame(animateFireworks);
+}
+
+// Menyesuaikan ukuran canvas saat layar berubah
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
+// Fungsi untuk menampilkan kembang api saat event berlangsung
+function startFireworks() {
+    setInterval(createFirework, 300);
+    animateFireworks();
+}
+
+// Modifikasi fungsi `updateCountdown` untuk menampilkan kembang api saat event berlangsung
+
+
+     </script>
 </body>
 </html>
