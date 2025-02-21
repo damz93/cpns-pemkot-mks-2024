@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
             if (eventDay.getTime() === today.getTime()) { 
                 // Jika tanggal event sama dengan tanggal hari ini (abaikan jam)
-                countdownElem.innerHTML = `<span class="text-success">🎉 Event Berlangsung</span>`;
+                countdownElem.innerHTML = `<span class="text-info">🎉 Event Berlangsung 🎉</span>`;
                 showFireworks();
             } 
             else if (diff > 0) {
