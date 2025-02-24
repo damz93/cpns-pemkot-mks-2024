@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h5>${event.namaevent}</h5>
                     <p class="short-desc">${shortDesc}</p>
                     <small>Waktu: ${event.waktuevent}</small>
-                    <p id="${countdownId}" class="countdown mt-2 fw-bold text-danger"></p>
+                    <p id="${countdownId}" class="countdown mt-3 fw-bold text-danger"></p>
 
                 </div>
             `;
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } 
             else if (diff > 0) {
                 // Countdown menuju event
-                countdownElem.innerHTML = `⏳ ${days}h ${hours}j ${minutes}m ${seconds}d`;
+                countdownElem.innerHTML = `⏳ ${days}h ${hours}j ${minutes}m ${seconds}d ⏳`;
             } 
             else {
                 // Event sudah selesai
