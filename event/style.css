@@ -27,9 +27,8 @@
 
 body{
     font-family: 'Poppins', sans-serif;     
-
-        height: 100vh;
-        background-color: red;
-        margin: 0;
+    height: 100vh;
+    /* background-color: orange */
+    margin: 0;
     
 }

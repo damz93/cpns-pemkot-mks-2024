@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
             let events = parseCSV(data);
             let { upcoming, ongoing, past } = processEvents(events);
         
-            displayEvents(ongoing.slice(0,3), "<div style='background-color:darkgreen;color:white;padding:10px;font-weight:500;'>&nbsp;Event yang Sedang Berlangsung</div>");
-            displayEvents(upcoming.slice(0, 9), "<div style='background-color:brown;color:white;padding:10px;font-weight:500;'>&nbsp;Event yang Akan Datang</div>");
+            displayEvents(ongoing.slice(0,3), "<div style='background-color:mediumseagreen;color:white;padding:10px;font-weight:500;'>&nbsp;Event yang Sedang Berlangsung</div>");
+            displayEvents(upcoming.slice(0, 9), "<div style='background-color:orange;color:white;padding:10px;font-weight:500;'>&nbsp;Event yang Akan Datang</div>");
             displayEvents(past.slice(0, 3), "<div style='background-color:gray;color:white;padding:10px;font-weight:500;'>&nbsp;Event yang Telah Selesai</div>");
         });
         
