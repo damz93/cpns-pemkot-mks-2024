@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } 
             else if (diff > 0) {
                 // Countdown menuju event
-                countdownElem.innerHTML = `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s`;
+                countdownElem.innerHTML = `⏳ ${days}h ${hours}j ${minutes}m ${seconds}d`;
             } 
             else {
                 // Event sudah selesai
