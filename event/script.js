@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <h5>${event.namaevent}</h5>
                     <p class="short-desc">${shortDesc}</p>
                     <small>Waktu: ${event.waktuevent}</small>
-                    <p id="${countdownId}" class="countdown mt-3 fw-bold text-danger"></p>
+                    <p id="${countdownId}" class="countdown mt-3 fw-bold text-danger" style="font-size:1rem"></p>
 
                 </div>
             `;
