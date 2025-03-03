@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Usul NIP | CPNS Pemkot Makassar 2024 | by Dedy A Muzawwir</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div style="background-color:aliceblue;width: 100%; text-align: center;">
+        <div style="background-color:aliceblue; position: sticky; top: 0; z-index: 1000;">
+            <h2 class="text-center pt-3" style="background-color:rgb(7, 42, 73);color:white;font-weight:bold;">
+                <a href="index.html"class="no-style"><img title="Kembali ke Menu Utama" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" height="80px" width="auto"></a><br>UPDATE USUL NIP
+            <p class="text-center pb-3" style="color:white;font-weight:120;font-size: 1.1rem;">
+                CPNS Pemerintah Kota Makassar 2024   
+            </p></h2>
+        </div>
+        <div class="container mt-4">
+            <h5 class="text-center text-danger mb-4" style="font-weight: bold;" id="update-info">Memuat data...</h5>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Jumlah Formasi</th>
+                            <th>Jumlah Lulus</th>
+                            <th>Jumlah Usul Masuk</th>
+                            <th>BTS</th>
+                            <th>TMS</th>
+                            <th>Pertek Selesai</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBcB7YBFlcroApqO1lxmKMkrOmhbkmx6NugFMI17HM0Gb-aAPgB6TSxv7VB54o43hAX-tV0-cnjtXu/pub?output=csv";
+            
+            fetch(sheetUrl)
+                .then(response => response.text())
+                .then(data => {
+                    const rows = data.split("\n");
+                    if (rows.length > 1) {
+                        const updateInfo = rows[0].split(",")[1]; // Kolom 2, Baris 1
+                        $("#update-info").text(updateInfo);
+                        // alert (updateInfo)
+                    }
+                    
+                    let tableContent = "";
+                    if (rows.length > 464) {
+                        const cols = rows[464].split(",");
+                        tableContent = `<tr>
+                            <td>${cols[2]}</td>
+                            <td>${cols[3]}</td>
+                            <td>${cols[4]}</td>
+                            <td>${cols[5]}</td>
+                            <td>${cols[6]}</td>
+                            <td>${cols[7]}</td>
+                        </tr>`;
+                    }
+                    $("#data-body").html(tableContent);
+                });
+        });
+    </script>
+</body>
+</html>
