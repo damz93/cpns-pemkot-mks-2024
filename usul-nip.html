@@ -27,6 +27,16 @@
             background-color: green;
             color: white;
         }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .blink {
+            animation: blink 2s infinite;
+        }
+
     </style>
 
 </head>
@@ -40,7 +50,7 @@
             </p></h2>
         </div>
         <div class="container mt-4">
-            <h5 class="text-center text-danger mb-4" style="font-weight: bold;text-transform: capitalize;" id="update-info">Memuat data...</h5>
+            <h5 class="text-center text-danger mb-4 blink" style="font-weight: bold;text-transform: capitalize;" id="update-info">Memuat data...</h5>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover table-striped">
                     <thead class="table-dark">
