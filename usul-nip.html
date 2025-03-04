@@ -17,6 +17,16 @@
             height: 100vh;
             margin: 0;
         }
+        .btn:hover{
+            background-color: rgb(8, 76, 8);
+            scale: 1.1;
+            font-size: large;
+        }
+        .btn{
+            text-decoration: none;
+            background-color: green;
+            color: white;
+        }
     </style>
 
 </head>
@@ -30,14 +40,14 @@
             </p></h2>
         </div>
         <div class="container mt-4">
-            <h5 class="text-center text-danger mb-4" style="font-weight: bold;" id="update-info">Memuat data...</h5>
+            <h5 class="text-center text-danger mb-4" style="font-weight: bold;text-transform: capitalize;" id="update-info">Memuat data...</h5>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover table-striped">
                     <thead class="table-dark">
                         <tr>
-                            <th>Jumlah Formasi</th>
-                            <th>Jumlah Lulus</th>
-                            <th>Jumlah Usul Masuk</th>
+                            <th>∑ Formasi</th>
+                            <th>∑ Lulus</th>
+                            <th>∑ Usul Masuk</th>
                             <th>BTS</th>
                             <th>TMS</th>
                             <th>Pertek Selesai</th>
@@ -46,6 +56,9 @@
                     <tbody id="data-body">
                     </tbody>
                 </table>
+                <div class="text-center mt-3" style="font-size: 0.9rem;">
+                    <p>Untuk melihat seluruh instansi: <a class="btn btn-success" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQBcB7YBFlcroApqO1lxmKMkrOmhbkmx6NugFMI17HM0Gb-aAPgB6TSxv7VB54o43hAX-tV0-cnjtXu/pubhtml#" target="_blank">Klik di sini</a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -60,7 +73,8 @@
                     const rows = data.split("\n");
                     if (rows.length > 1) {
                         const updateInfo = rows[0].split(",")[1]; // Kolom 2, Baris 1
-                        $("#update-info").text(updateInfo);
+                        // $("#update-info").text(updateInfo);
+                        $("#update-info").text(updateInfo.toLowerCase()).css("text-transform", "capitalize");
                         // alert (updateInfo)
                     }
                     
