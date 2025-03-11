@@ -81,64 +81,74 @@
     </div>
 
     <script>
-        $(document).ready(function() {
+         $(document).ready(function() {
             const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBcB7YBFlcroApqO1lxmKMkrOmhbkmx6NugFMI17HM0Gb-aAPgB6TSxv7VB54o43hAX-tV0-cnjtXu/pub?output=csv";
             
             fetch(sheetUrl)
-                .then(response => response.text())
-                .then(data => {
-                    const rows = data.split("\n");
-
-                    if (rows.length > 1) {
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split("\n").map(row => row.trim()); // Bersihkan spasi & karakter tersembunyi
+                if (rows.length > 1) {
                         const updateInfo = rows[0].split(",")[1]; // Kolom 2, Baris 1
                         $("#update-info").text(updateInfo.toLowerCase()).css("text-transform", "capitalize");
                     }
-
-                    let tableContent = "";
-
-                    // Cari baris yang mengandung "Pemerintah Kota Makassar"
-                    const targetIndex = rows.findIndex(row => row.includes("Pemerintah Kota Makassar"));
-
-                    // Daftar indeks yang ingin diambil (baris ke-5 + hasil pencarian jika ditemukan)
-                    const indices = [5];
+                
+                let tableContent = "";
+                const targets = [
+                    { keyword: "Pemerintah Kota Makassar", short: "Pemkot Makassar" }
+                    
+                    // { keyword: "Kementerian Lingkungan Hidup dan Kehutanan", short: "KLHK" },
+                    // { keyword: "Setjen Dewan Perwakilan Daerah", short: "Setjen DPD" }
+                ];
+                
+                // let found = { "Pemkot Makassar": false, "KLHK": false, "Setjen DPD": false }; // Cek apakah sudah ditemukan
+                let found = { "Pemkot Makassar": false}; // Cek apakah sudah ditemukan
+                
+                // Looping untuk mencari kementerian
+                targets.forEach(target => {
+                    const targetIndex = rows.findIndex(row => row.includes(target.keyword));
+    
                     if (targetIndex !== -1) {
-                        indices.push(targetIndex);
-                    }
-
-                    indices.forEach(index => {
-                        if (rows.length > index) {
-                            const cols = rows[index].split(",");
-
-                            // Ubah kolom pertama sesuai kondisi
-                            cols[1] = cols[1].includes("Pemerintah Kota Makassar") ? "PemKot MKS" : "Semua Instansi";
-
-                            tableContent += `<tr>
-                                <td style="text-align:left">${cols[1]}</td>
-                                <td style="text-align:right">${cols[2]}</td>
-                                <td style="text-align:right">${cols[3]}</td>
-                                <td style="text-align:right">${cols[4]}</td>
-                                <td style="text-align:right">${cols[5]}</td>
-                                <td style="text-align:right">${cols[6]}</td>
-                                <td style="text-align:right">${cols[7]}</td>
-                            </tr>`;
-                        }
-                    });
-
-                    // Jika "Pemerintah Kota Makassar" tidak ditemukan, tambahkan baris default
-                    if (targetIndex === -1) {
-                        tableContent += `<tr>
-                            <td>Tidak ditemukan</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
+                        found[target.short] = true; // Tandai bahwa sudah ditemukan
+                        const cols = rows[targetIndex].split(",");
+                        tableContent += `<tr>    
+                            <td style="text-align:left">${target.short}</td>
+                            <td style="text-align:right">${cols[2] || "-"}</td>
+                            <td style="text-align:right">${cols[3] || "-"}</td>
+                            <td style="text-align:right">${cols[4] || "-"}</td>
+                            <td style="text-align:right">${cols[5] || "-"}</td>
+                            <td style="text-align:right">${cols[6] || "-"}</td>
+                            <td style="text-align:right">${cols[7] || "-"}</td>
                         </tr>`;
                     }
-
-                    $("#data-body").html(tableContent); // Masukkan ke dalam tabel
                 });
-
+    
+                // Tambahkan baris ke-5 dengan "Semua Instansi"
+                if (rows.length > 5) {
+                    const cols = rows[5].split(",");
+                    tableContent += `<tr>    
+                        <td style="text-align:left">Semua Instansi</td>
+                        <td style="text-align:right">${cols[2] || "-"}</td>
+                        <td style="text-align:right">${cols[3] || "-"}</td>
+                        <td style="text-align:right">${cols[4] || "-"}</td>
+                        <td style="text-align:right">${cols[5] || "-"}</td>
+                        <td style="text-align:right">${cols[6] || "-"}</td>
+                        <td style="text-align:right">${cols[7] || "-"}</td>
+                    </tr>`;
+                }
+    
+                // Jika tidak ditemukan, tambahkan baris default
+                Object.keys(found).forEach(key => {
+                    if (!found[key]) {
+                        tableContent += `<tr>
+                            <td style="text-align:left">Tidak ditemukan</td>
+                            <td colspan="6" style="text-align:center">-</td>
+                        </tr>`;
+                    }
+                });
+    
+                $("#data-body").html(tableContent); // Masukkan ke dalam tabel
+            });
         });
 
     </script>
