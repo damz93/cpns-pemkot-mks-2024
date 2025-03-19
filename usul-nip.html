@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Usul NIP | CPNS Pemkot Makassar 2024 | by Dedy A Muzawwir</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            height: 100vh;
+            margin: 0;
+        }
+        .btn:hover{
+            background-color: rgb(8, 76, 8);
+            scale: 1.1;
+            font-size: large;
+        }
+        .btn{
+            text-decoration: none;
+            background-color: green;
+            color: white;
+        }
+        @keyframes blink {
+            25% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .blink {
+            animation: blink 2s infinite;
+        }
+        @media (max-width: 768px) {  /* Untuk HP dan Tablet */
+            table td, table th {
+                font-size: 0.6rem !important;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div style="background-color:aliceblue;width: 100%; text-align: center;">
+        <div style="background-color:aliceblue; position: sticky; top: 0; z-index: 1000;">
+            <h2 class="text-center pt-3" style="background-color:rgb(7, 42, 73);color:white;font-weight:bold;">
+                <a href="index.html"class="no-style"><img title="Kembali ke Menu Utama" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" height="80px" width="auto"></a><br>UPDATE USUL NIP
+            <p class="text-center pb-3" style="color:white;font-weight:120;font-size: 1.1rem;">
+                CPNS Pemerintah Kota Makassar 2024   
+            </p></h2>
+        </div>
+        <div class="container mt-4">
+            <h5 class="text-center text-danger mb-4 blink" style="font-weight: bold;text-transform: capitalize;" id="update-info">Memuat data...</h5>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Instansi</th>
+                            <th>Formasi</th>
+                            <th>Lulus</th>
+                            <th>Usul Masuk</th>
+                            <th>BTS</th>
+                            <th>TMS</th>
+                            <th>Pertek Selesai</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-body">
+                    </tbody>
+                </table>
+                <div class="text-center mt-5" style="font-size: 0.9rem;">
+                    <p>Untuk melihat seluruh instansi: <a class="btn btn-success" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQBcB7YBFlcroApqO1lxmKMkrOmhbkmx6NugFMI17HM0Gb-aAPgB6TSxv7VB54o43hAX-tV0-cnjtXu/pubhtml#" target="_blank">Klik di sini</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+         $(document).ready(function() {
+            const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQBcB7YBFlcroApqO1lxmKMkrOmhbkmx6NugFMI17HM0Gb-aAPgB6TSxv7VB54o43hAX-tV0-cnjtXu/pub?output=csv";
+            
+            fetch(sheetUrl)
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split("\n").map(row => row.trim()); // Bersihkan spasi & karakter tersembunyi
+                if (rows.length > 1) {
+                        const updateInfo = rows[0].split(",")[1]; // Kolom 2, Baris 1
+                        $("#update-info").text(updateInfo.toLowerCase()).css("text-transform", "capitalize");
+                    }
+                
+                let tableContent = "";
+                const targets = [
+                    { keyword: "Pemerintah Kota Makassar", short: "Pemkot Makassar" }
+                    
+                    // { keyword: "Kementerian Lingkungan Hidup dan Kehutanan", short: "KLHK" },
+                    // { keyword: "Setjen Dewan Perwakilan Daerah", short: "Setjen DPD" }
+                ];
+                
+                // let found = { "Pemkot Makassar": false, "KLHK": false, "Setjen DPD": false }; // Cek apakah sudah ditemukan
+                let found = { "Pemkot Makassar": false}; // Cek apakah sudah ditemukan
+                
+                // Looping untuk mencari kementerian
+                targets.forEach(target => {
+                    const targetIndex = rows.findIndex(row => row.includes(target.keyword));
+    
+                    if (targetIndex !== -1) {
+                        found[target.short] = true; // Tandai bahwa sudah ditemukan
+                        const cols = rows[targetIndex].split(",");
+                        tableContent += `<tr>    
+                            <td style="text-align:left">${target.short}</td>
+                            <td style="text-align:right">${cols[2] || "-"}</td>
+                            <td style="text-align:right">${cols[3] || "-"}</td>
+                            <td style="text-align:right">${cols[4] || "-"}</td>
+                            <td style="text-align:right">${cols[5] || "-"}</td>
+                            <td style="text-align:right">${cols[6] || "-"}</td>
+                            <td style="text-align:right">${cols[7] || "-"}</td>
+                        </tr>`;
+                    }
+                });
+    
+                // Tambahkan baris ke-5 dengan "Semua Instansi"
+                if (rows.length > 5) {
+                    const cols = rows[5].split(",");
+                    tableContent += `<tr>    
+                        <td style="text-align:left">Semua Instansi</td>
+                        <td style="text-align:right">${cols[2] || "-"}</td>
+                        <td style="text-align:right">${cols[3] || "-"}</td>
+                        <td style="text-align:right">${cols[4] || "-"}</td>
+                        <td style="text-align:right">${cols[5] || "-"}</td>
+                        <td style="text-align:right">${cols[6] || "-"}</td>
+                        <td style="text-align:right">${cols[7] || "-"}</td>
+                    </tr>`;
+                }
+    
+                // Jika tidak ditemukan, tambahkan baris default
+                Object.keys(found).forEach(key => {
+                    if (!found[key]) {
+                        tableContent += `<tr>
+                            <td style="text-align:left">Tidak ditemukan</td>
+                            <td colspan="6" style="text-align:center">-</td>
+                        </tr>`;
+                    }
+                });
+    
+                $("#data-body").html(tableContent); // Masukkan ke dalam tabel
+            });
+        });
+
+    </script>
+</body>
+</html>
