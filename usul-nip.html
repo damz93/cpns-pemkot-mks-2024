@@ -138,16 +138,16 @@
                     const cols = rows[2].split(",");
                     tableContent += `<tr>    
                             <td style="text-align:left">Semua Instansi (Kantor Regional IV BKN Makassar)</td>
-                            <td style="text-align:right">${cols[3] || "-"}</td>
-                            <td style="text-align:right">${cols[4] || "-"}</td>
-                            <td style="text-align:right">${cols[5] || "-"}</td>
-                            <td style="text-align:right">${cols[6] || "-"}</td>
-                            <td style="text-align:right">${cols[7] || "-"}</td>
-                            <td style="text-align:right">${cols[8] || "-"}</td>
-                            <td style="text-align:right">${cols[9] || "-"}</td>
-                            <td style="text-align:right">${cols[10] || "-"}</td>
-                            <td style="text-align:right">${cols[11] || "-"}</td>
-                            <td style="text-align:right">${cols[12] || "-"}</td>
+                            <td style="text-align:right">${number_format(cols[3]) || "-"}</td>
+                            <td style="text-align:right">${number_format(cols[4]) || "-"}</td>
+                            <td style="text-align:right">${number_format(cols[5]) || "-"}</td>
+                            <td style="text-align:right">${number_format(cols[6]) || "-"}</td>
+                            <td style="text-align:right">${number_format(cols[7]) || "-"}</td>
+                            <td style="text-align:right">${number_format(cols[8]) || "-"}</td>
+                            <td style="text-align:right">${number_format(cols[9]) || "-"}</td>
+                            <td style="text-align:right">${number_format(cols[10]) || "-"}</td>
+                            <td style="text-align:right">${number_format(cols[11]) || "-"}</td>
+                            <td style="text-align:right">${number_format(cols[12]) || "-"}</td>
                             <td style="text-align:right">${cols[13] || "-"}</td>
                     </tr>`;
                 }
@@ -166,6 +166,10 @@
             });
         });
 
+        function number_format(number) {
+    return new Intl.NumberFormat().format(number);
+}
+        
     </script>
 </body>
 </html>
