@@ -148,12 +148,13 @@
         #saweria-widget {
           position: fixed;
           top: 5px; 
-          left: 5px;
+          left: 10px;
           background: white;
           padding: 10px 15px;
           border-radius: 30px;
           box-shadow: 0 4px 12px rgba(0,0,0,0.2);
           z-index: 9999;
+          animation: popText 1s infinite alternate ease-in-out;
           font-family: sans-serif;
           font-size: 14px;
           transition: transform 0.5s ease;
@@ -166,6 +167,21 @@
         #saweria-widget img {
           width: 50px;
           height: auto;
+        } @keyframes popText {
+            0% {
+                transform: scale(1);
+                /* text-shadow: 2px 2px 0px #000; */
+            }
+
+            50% {
+                transform: scale(1.07);
+                /* text-shadow: 4px 4px 0px #000; */
+            }
+
+            100% {
+                transform: scale(1);
+                /* text-shadow: 2px 2px 0px #000; */
+            }
         }
       </style>
 </head>
@@ -182,7 +198,7 @@
     <div id="saweria-widget">
         <a href="https://saweria.co/damz93" target="_blank" style="text-decoration: none; color: #1D234D;">
             <img src="https://www.pngplay.com/wp-content/uploads/12/Killua-Zoldyck-Transparent-Image.png" alt="Donasi" style="width: 35px; vertical-align: middle;">
-            <span style="margin-left: 1px;font-family: poppins;">✨agar terus berkembang💖</span>
+            <span style="margin-left: 1px;font-family: poppins;">Boleh Kak Recehannya 💖</span>
         </a>
     </div>
         <div class="row g-3 mt-3 w-100">
