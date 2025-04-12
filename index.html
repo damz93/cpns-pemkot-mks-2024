@@ -47,6 +47,7 @@
             align-items: center;
             height: auto;
             margin: 0;
+            padding-bottom: 90px;
             font-family: 'Poppins', sans-serif;
             color: white;
             
@@ -71,19 +72,6 @@
             width: 100%;
             height: 5vh;
         }
-
-/* 
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
-        }
- */
 
         .speech-bubble {
             position: relative;
@@ -159,8 +147,8 @@
     <style>
         #saweria-widget {
           position: fixed;
-          bottom: 2px; 
-          left: 1%;
+          top: 5px; 
+          left: 5px;
           background: white;
           padding: 10px 15px;
           border-radius: 30px;
@@ -185,7 +173,7 @@
 <body>
     
     <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
-    <div class="container h-100 d-flex flex-column align-items-center">        
+    <div class="container h-100 d-flex flex-column align-items-center" style="padding-top: 50px;">
        <a href="https://damz93.github.io/cpns-pemkot-mks-2024/"><img class="m-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" width="120" height="auto" alt=""></a>
        <div class="speech-bubble" id="typing-text"></div>
 
