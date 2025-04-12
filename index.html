@@ -40,12 +40,12 @@
             background-attachment: fixed;
             background: url('https://images.unsplash.com/photo-1643022040583-b4be6de7fbf6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') 
                 no-repeat center center/cover;
-            min-height: 100vh;
+            min-height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 95vh;
+            height: auto;
             margin: 0;
             font-family: 'Poppins', sans-serif;
             color: white;
@@ -156,6 +156,30 @@
         }
         window.onload = typeEffect;
     </script>
+    <style>
+        #saweria-widget {
+          position: fixed;
+          bottom: 2px; 
+          left: 1%;
+          background: white;
+          padding: 10px 15px;
+          border-radius: 30px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+          z-index: 9999;
+          font-family: sans-serif;
+          font-size: 14px;
+          transition: transform 0.5s ease;
+        }
+      
+        #saweria-widget:hover {
+          transform: scale(1.2);
+        }
+      
+        #saweria-widget img {
+          width: 50px;
+          height: auto;
+        }
+      </style>
 </head>
 
 <body>
@@ -166,6 +190,13 @@
        <div class="speech-bubble" id="typing-text"></div>
 
 
+      <!-- Widget Donasi Saweria -->
+    <div id="saweria-widget">
+        <a href="https://saweria.co/damz93" target="_blank" style="text-decoration: none; color: #1D234D;">
+            <img src="https://www.pngplay.com/wp-content/uploads/12/Killua-Zoldyck-Transparent-Image.png" alt="Donasi" style="width: 35px; vertical-align: middle;">
+            <span style="margin-left: 1px;font-family: poppins;">✨agar terus berkembang💖</span>
+        </a>
+    </div>
         <div class="row g-3 mt-3 w-100">
             <div class="col-12 d-flex justify-content-center">
                 <a href="https://damz93.github.io/cpns-pemkot-mks-2024/usul-nip" class="btn btn-custom btn-danger btn-lg">
