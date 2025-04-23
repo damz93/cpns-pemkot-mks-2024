@@ -155,6 +155,7 @@
             <thead class="table-dark">
                 <tr>
                     <th>No</th>
+                    <th>Nomor Peserta</th>
                     <th>Nama</th>
                     <th>Phone</th>
                     <th>Email</th>
@@ -175,6 +176,7 @@
                     let sheetData = JSON.parse(jsonData[1]).table.rows;
                     
                     let formattedData = sheetData.map((row, index) => ({
+                        noper: row.c[9] ? row.c[9].v : "",
                         nama: row.c[2] ? row.c[2].v : "",
                         phone: row.c[3] ? row.c[3].v : "",
                         email: row.c[3] ? row.c[1].v : "",
@@ -192,6 +194,7 @@
                         $("#dataTable tbody").append(`
                             <tr>
                                 <td>${index + 1}</td>
+                                <td>${row.noper}</td>
                                 <td>${row.nama.toUpperCase()}</td>
                                 <td>${row.phone}</td>
                                 <td style='text-align:center'>
