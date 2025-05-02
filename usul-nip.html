@@ -119,9 +119,9 @@
                             <th>MS</th>
                             <th>BTS</th>
                             <th>TMS</th>
-                            <th>Sisa (BKN)</th>
+                            <!-- <th>Sisa (BKN)</th> -->
                             <th>Pertek Selesai</th>
-                            <th>Presentase SK (Instansi)</th>
+                            <th>Presentase Pertek</th>
                    
                         </tr>
                     </thead>
@@ -165,6 +165,10 @@
                     if (targetIndex !== -1) {
                         found[target.short] = true; // Tandai bahwa sudah ditemukan
                         const cols = rows[targetIndex].split(",");
+                        let pertek = Math.round((cols[12] / cols[5] * 100) * 100) / 100;
+
+                        pertek = pertek+'%';
+
                         tableContent += `<tr>    
                             <td style="text-align:left">${target.short}</td>
                             <td style="text-align:right">${cols[4] || "-"}</td>
@@ -173,9 +177,8 @@
                             <td style="text-align:right">${cols[8] || "-"}</td>
                             <td style="text-align:right">${cols[9] || "-"}</td>
                             <td style="text-align:right">${cols[10] || "-"}</td>
-                            <td style="text-align:right">${cols[11] || "-"}</td>
                             <td style="text-align:right">${cols[12] || "-"}</td>
-                            <td style="text-align:right">${cols[13] || "-"}</td>
+                            <td style="text-align:right">${pertek || "-"}</td>
                         </tr>`;
                     }
                 });
@@ -183,6 +186,8 @@
                 // Tambahkan baris ke-5 dengan "Semua Instansi"
                 if (rows.length > 2) {
                     const cols = rows[2].split(",");
+                    let pertek = Math.round((cols[12] / cols[5] * 100) * 100) / 100;
+                    pertek = pertek+'%';
                     tableContent += `<tr>    
                             <td style="text-align:left">Semua Instansi (Kantor Regional IV BKN Makassar)</td>
                             <td style="text-align:right">${number_format(cols[4]) || "-"}</td>
@@ -191,9 +196,8 @@
                             <td style="text-align:right">${number_format(cols[8]) || "-"}</td>
                             <td style="text-align:right">${number_format(cols[9]) || "-"}</td>
                             <td style="text-align:right">${number_format(cols[10]) || "-"}</td>
-                            <td style="text-align:right">${number_format(cols[11]) || "-"}</td>
                             <td style="text-align:right">${number_format(cols[12]) || "-"}</td>
-                            <td style="text-align:right">${cols[13] || "-"}</td>
+                            <td style="text-align:right">${pertek || "-"}</td>
                     </tr>`;
                 }
     
