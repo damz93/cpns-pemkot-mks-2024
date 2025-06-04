@@ -195,7 +195,9 @@
                 <div class="card text-white" style="background-color:#C1121F ">
                     <div class="card-body text-start">
                         <p class="card-text" id="totalKebutuhan">0</p>
-                        <p class="card-text" id="totalKosong">0</p>                   
+                        <p class="card-text" id="totalKosong">0</p>
+                        <p class="card-text" id="totalLulus">0</p>
+                        <p class="card-text" id="totalUndurDiri">0</p>
                     </div>
                 </div>
             </div>
@@ -289,8 +291,10 @@
 
             $("#dataTable tbody").html(formattedData.join(""));
             $("#totalKebutuhan").text('Total Kebutuhan: 186 orang');
-            $("#totalKosong").text('Total Kebutuhan yang Kosong: 19 orang');
-            $("#totalSeharusnya").text('Total P/L: '+totalSeharusnya+' orang');
+            $("#totalLulus").text('Total Lulus: 168 orang');
+            $("#totalKosong").text('Total Kebutuhan yang Kosong: 18+1 orang');
+            $("#totalUndurDiri").text('Total Mengundurkan Diri: 1 orang');
+            $("#totalSeharusnya").text('Total Fix: '+totalSeharusnya+' orang');
             $("#totalSudahInput").text('Total Sudah Input GForm: '+totalSudahInput+' orang ('+persenSudahInput+'%)');
             $("#totalBelumInput").text('Total Belum Input GForm: '+totalBelumInput+' orang ('+persenBelumInput+'%)');
 
