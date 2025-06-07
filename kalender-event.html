@@ -17,6 +17,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
+    .modal-header {
+			background-color: maroon !important;
+			color: white;
+			}.form-select:focus, .form-control:focus {
+			border-color: maroon !important;
+			box-shadow: 0 0 5px maroon !important;
+			}
     body { 
         font-family: 'Poppins', sans-serif; 
         
@@ -102,12 +109,18 @@
 
             <!-- Event List -->
             <div id="eventList" class="row mt-1"></div>
-            <div class="modal fade" id="eventModal" tabindex="-1">
-                <div class="modal-dialog">
+
+
+				
+
+            
+            <div class="modal fade" id="eventModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+                
+                <div class="modal-dialog modal-md">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalTitle"></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            <button type="button" class="btn-close" style="filter: invert(1);" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <p id="modalDescription"></p>
