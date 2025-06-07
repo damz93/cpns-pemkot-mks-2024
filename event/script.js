@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
             else {
                 // Event sudah selesai
                 clearInterval(countdownIntervals[countdownId]);
-                let hari = Math.abs(days);
+                let hari = Math.abs(days) - 1;
                 countdownElem.innerHTML = `<span class="text-secondary">Event selesai! ${hari} hari yang lalu</span>`;
             }
         };
