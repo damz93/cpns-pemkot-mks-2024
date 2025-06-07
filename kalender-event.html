@@ -75,10 +75,19 @@
                 text-shadow: 2px 2px 0px #000;
             }
         }
+        #fireworksCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: none;
+}
       </style>
 </head>
 <!-- <body style=" font-family: 'Poppins', sans-serif;"> -->
 <body class="bg-light align-items-center">
+    
+            <canvas id="fireworksCanvas"></canvas>
     <div id="saweria-widget">
         <a href="https://saweria.co/damz93" target="_blank" style="text-decoration: none; color: white;">
             <img src="https://www.pngplay.com/wp-content/uploads/12/Killua-Zoldyck-Transparent-Image.png" alt="Donasi" style="width: 35px; vertical-align: middle;">
@@ -86,6 +95,7 @@
         </a>
     </div>
     <div class="container-fluid" style="padding: 0;">
+        
 
         <div style="background-color:aliceblue;width: 100%; text-align: center;">
             <div style="background-color:aliceblue; position: sticky; top: 0; z-index: 1000;">
@@ -107,12 +117,13 @@
         </div>
 
         <!-- Search Bar -->
+         
         <div class="container">
-            <!-- <canvas id="firework"></canvas> -->
             <input type="text" id="searchInput" class="form-control mt-3" placeholder="Cari event...">
 
             <!-- Event List -->
-            <div id="eventList" class="row mt-1"></div>
+            <div id="eventList" class="row mt-1">
+        </div>
 
             
             <div class="modal fade" id="eventModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
