@@ -124,14 +124,14 @@ document.addEventListener("DOMContentLoaded", function () {
             let card = document.createElement("div");
             card.className = "col-md-4 mb-3";
             card.innerHTML = `
-                <div class="bard p-3 shadow event-card" style="cursor:pointer;" data-index="${index}">
+                <div class="bard p-3 shadow event-card" style="cursor:pointer; border-radius: 1rem; overflow: hidden;" data-index="${index}">
                     <h5>${event.namaevent}</h5>
                     <p class="short-desc">${shortDesc}</p>
                     <small>Waktu: ${event.waktuevent}</small>
                     <p id="${countdownId}" class="countdown mt-3 fw-bold text-danger" style="font-size:1rem"></p>
-
                 </div>
             `;
+
     
             row.appendChild(card);
             
