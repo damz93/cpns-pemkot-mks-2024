@@ -20,7 +20,7 @@
     {
         "no": 4,
         "singkatan": "UMPEG",
-        "penjelasan": "Urusan Kepegawaian",
+        "penjelasan": "Umum & Kepegawaian",
         "kategori": "Struktur Organisasi"
     },
     {
@@ -388,5 +388,840 @@
         "singkatan": "TPP",
         "penjelasan": "Tambahan Penghasilan Pegawai",
         "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 66,
+        "singkatan": "SEKCAM",
+        "penjelasan": "Sekretaris Camat",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 67,
+        "singkatan": "ASN",
+        "penjelasan": "Aparatur Sipil Negara",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 68,
+        "singkatan": "PANRB",
+        "penjelasan": "Kementerian Pendayagunaan Aparatur Negara dan Reformasi Birokrasi",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 69,
+        "singkatan": "LAN",
+        "penjelasan": "Lembaga Administrasi Negara",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 70,
+        "singkatan": "SP4N-LAPOR",
+        "penjelasan": "Sistem Pengelolaan Pengaduan Pelayanan Publik Nasional - Layanan Aspirasi dan Pengaduan Online Rakyat",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 71,
+        "singkatan": "KPPN",
+        "penjelasan": "Kantor Pelayanan Perbendaharaan Negara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 72,
+        "singkatan": "BPK",
+        "penjelasan": "Badan Pemeriksa Keuangan",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 73,
+        "singkatan": "BAPPEDA",
+        "penjelasan": "Badan Perencanaan Pembangunan Daerah",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 74,
+        "singkatan": "DUPAK",
+        "penjelasan": "Daftar Usulan Penetapan Angka Kredit",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 75,
+        "singkatan": "PAK",
+        "penjelasan": "Penetapan Angka Kredit",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 76,
+        "singkatan": "JJA",
+        "penjelasan": "Jabatan dan Jenjang Administrasi",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 77,
+        "singkatan": "JPT",
+        "penjelasan": "Jabatan Pimpinan Tinggi",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 78,
+        "singkatan": "Eselon",
+        "penjelasan": "Tingkatan Jabatan Struktural",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 79,
+        "singkatan": "DP3",
+        "penjelasan": "Daftar Penilaian Pelaksanaan Pekerjaan",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 80,
+        "singkatan": "TP4D",
+        "penjelasan": "Tim Pengawal dan Pengaman Pemerintahan dan Pembangunan Daerah",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 81,
+        "singkatan": "PPID",
+        "penjelasan": "Pejabat Pengelola Informasi dan Dokumentasi",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 82,
+        "singkatan": "KUA-PPAS",
+        "penjelasan": "Kerangka Umum Anggaran - Prioritas dan Plafon Anggaran Sementara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 83,
+        "singkatan": "APBD",
+        "penjelasan": "Anggaran Pendapatan dan Belanja Daerah",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 84,
+        "singkatan": "APBN",
+        "penjelasan": "Anggaran Pendapatan dan Belanja Negara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 85,
+        "singkatan": "DIPA",
+        "penjelasan": "Daftar Isian Pelaksanaan Anggaran",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 86,
+        "singkatan": "PBJ",
+        "penjelasan": "Pengadaan Barang dan Jasa",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 87,
+        "singkatan": "UKPBJ",
+        "penjelasan": "Unit Kerja Pengadaan Barang/Jasa",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 88,
+        "singkatan": "LPSE",
+        "penjelasan": "Layanan Pengadaan Secara Elektronik",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 89,
+        "singkatan": "KPA",
+        "penjelasan": "Kuasa Pengguna Anggaran",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 90,
+        "singkatan": "PPKom",
+        "penjelasan": "Pejabat Penatausahaan Keuangan",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 91,
+        "singkatan": "BUN",
+        "penjelasan": "Bendahara Umum Negara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 92,
+        "singkatan": "BUD",
+        "penjelasan": "Bendahara Umum Daerah",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 93,
+        "singkatan": "SP2HL",
+        "penjelasan": "Surat Perintah Pengesahan Hasil Lelang",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 94,
+        "singkatan": "SPK",
+        "penjelasan": "Surat Perjanjian Kerja",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 95,
+        "singkatan": "SPB",
+        "penjelasan": "Surat Permintaan Barang",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 96,
+        "singkatan": "SP3",
+        "penjelasan": "Surat Perintah Penghentian Pembayaran",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 97,
+        "singkatan": "SPTJM",
+        "penjelasan": "Surat Pernyataan Tanggung Jawab Mutlak",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 98,
+        "singkatan": "SIP",
+        "penjelasan": "Sistem Informasi Pengadaan",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 99,
+        "singkatan": "SIK",
+        "penjelasan": "Sistem Informasi Keuangan",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 100,
+        "singkatan": "SIAP",
+        "penjelasan": "Sistem Informasi Aplikasi Pengelolaan",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 101,
+        "singkatan": "SIA",
+        "penjelasan": "Sistem Informasi Akuntansi",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 102,
+        "singkatan": "SIKD",
+        "penjelasan": "Sistem Informasi Keuangan Daerah",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 103,
+        "singkatan": "SIMDA",
+        "penjelasan": "Sistem Informasi Manajemen Daerah",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 104,
+        "singkatan": "SIMPATDA",
+        "penjelasan": "Sistem Informasi Manajemen Pajak Daerah",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 105,
+        "singkatan": "SIMAK-BMN",
+        "penjelasan": "Sistem Informasi Manajemen Aset Barang Milik Negara",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 106,
+        "singkatan": "BMN",
+        "penjelasan": "Barang Milik Negara",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 107,
+        "singkatan": "BMD",
+        "penjelasan": "Barang Milik Daerah",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 108,
+        "singkatan": "KPKNL",
+        "penjelasan": "Kantor Pelayanan Kekayaan Negara dan Lelang",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 109,
+        "singkatan": "PHO",
+        "penjelasan": "Provisional Hand Over (Serah Terima Sementara)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 110,
+        "singkatan": "FHO",
+        "penjelasan": "Final Hand Over (Serah Terima Akhir)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 111,
+        "singkatan": "BA",
+        "penjelasan": "Berita Acara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 112,
+        "singkatan": "BAHP",
+        "penjelasan": "Berita Acara Hasil Pemeriksaan",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 113,
+        "singkatan": "LHP",
+        "penjelasan": "Laporan Hasil Pemeriksaan",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 114,
+        "singkatan": "SKT",
+        "penjelasan": "Surat Keterangan Tugas",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 115,
+        "singkatan": "SPTB",
+        "penjelasan": "Surat Perintah Tugas Belanja",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 116,
+        "singkatan": "SPBy",
+        "penjelasan": "Surat Perintah Bayar",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 117,
+        "singkatan": "SPPLS",
+        "penjelasan": "Surat Perintah Pembayaran Langsung",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 118,
+        "singkatan": "SP2T",
+        "penjelasan": "Surat Perintah Pengeluaran Tunai",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 119,
+        "singkatan": "SPTNP",
+        "penjelasan": "Surat Perintah Tugas Non PNS",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 120,
+        "singkatan": "SP3K",
+        "penjelasan": "Surat Perintah Penyediaan Kredit",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 121,
+        "singkatan": "SPS",
+        "penjelasan": "Surat Perintah Setoran",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 122,
+        "singkatan": "SSBP",
+        "penjelasan": "Surat Setoran Bukan Pajak",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 123,
+        "singkatan": "SSPB",
+        "penjelasan": "Surat Setoran Penerimaan Belanja",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 124,
+        "singkatan": "SP3B",
+        "penjelasan": "Surat Perintah Pencairan Belanja",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 125,
+        "singkatan": "SP3HL",
+        "penjelasan": "Surat Perintah Pengesahan Hasil Lelang",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 126,
+        "singkatan": "SP2B",
+        "penjelasan": "Surat Perintah Pembayaran Belanja",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 127,
+        "singkatan": "SPP-LS",
+        "penjelasan": "Surat Perintah Pembayaran Langsung",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 128,
+        "singkatan": "SPP-GU",
+        "penjelasan": "Surat Perintah Pembayaran Ganti Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 129,
+        "singkatan": "SPP-TU",
+        "penjelasan": "Surat Perintah Pembayaran Tambahan Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 130,
+        "singkatan": "SPP-UP",
+        "penjelasan": "Surat Perintah Pembayaran Uang Persediaan",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 131,
+        "singkatan": "SP2HLB",
+        "penjelasan": "Surat Perintah Pengesahan Hasil Lelang Barang",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 132,
+        "singkatan": "SPTB-LS",
+        "penjelasan": "Surat Perintah Tugas Belanja Langsung",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 133,
+        "singkatan": "SPTB-GU",
+        "penjelasan": "Surat Perintah Tugas Belanja Ganti Uang",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 134,
+        "singkatan": "SPTB-TU",
+        "penjelasan": "Surat Perintah Tugas Belanja Tambahan Uang",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 135,
+        "singkatan": "SPTB-UP",
+        "penjelasan": "Surat Perintah Tugas Belanja Uang Persediaan",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 136,
+        "singkatan": "SPM-LS",
+        "penjelasan": "Surat Perintah Membayar Langsung",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 137,
+        "singkatan": "SPM-GU",
+        "penjelasan": "Surat Perintah Membayar Ganti Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 138,
+        "singkatan": "SPM-TU",
+        "penjelasan": "Surat Perintah Membayar Tambahan Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 139,
+        "singkatan": "SPM-UP",
+        "penjelasan": "Surat Perintah Membayar Uang Persediaan",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 140,
+        "singkatan": "SP2D-LS",
+        "penjelasan": "Surat Perintah Pencairan Dana Langsung",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 141,
+        "singkatan": "SP2D-GU",
+        "penjelasan": "Surat Perintah Pencairan Dana Ganti Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 142,
+        "singkatan": "SP2D-TU",
+        "penjelasan": "Surat Perintah Pencairan Dana Tambahan Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 143,
+        "singkatan": "SP2D-UP",
+        "penjelasan": "Surat Perintah Pencairan Dana Uang Persediaan",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 144,
+        "singkatan": "SKPP",
+        "penjelasan": "Surat Keterangan Penghentian Pembayaran",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 145,
+        "singkatan": "SP3N",
+        "penjelasan": "Surat Perintah Penyediaan Nomor",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 146,
+        "singkatan": "SP3T",
+        "penjelasan": "Surat Perintah Penyediaan Tunai",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 147,
+        "singkatan": "SP3P",
+        "penjelasan": "Surat Perintah Penyediaan Pembayaran",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 148,
+        "singkatan": "SP3S",
+        "penjelasan": "Surat Perintah Penyediaan Setoran",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 149,
+        "singkatan": "SP3L",
+        "penjelasan": "Surat Perintah Penyediaan Lelang",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 150,
+        "singkatan": "SP3BP",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 151,
+        "singkatan": "SP3BNP",
+        "penjelasan": "Surat Perintah Penyediaan Belanja Non PNS",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 152,
+        "singkatan": "SP3BL",
+        "penjelasan": "Surat Perintah Penyediaan Belanja Langsung",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 153,
+        "singkatan": "SP3BG",
+        "penjelasan": "Surat Perintah Penyediaan Belanja Ganti",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 154,
+        "singkatan": "SP3BT",
+        "penjelasan": "Surat Perintah Penyediaan Belanja Tambahan",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 155,
+        "singkatan": "SP3BU",
+        "penjelasan": "Surat Perintah Penyediaan Belanja Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 156,
+        "singkatan": "SP3BLS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja Langsung Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 157,
+        "singkatan": "SP3BGS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja Ganti Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 158,
+        "singkatan": "SP3BTS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja Tambahan Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 159,
+        "singkatan": "SP3BUS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja Uang Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 160,
+        "singkatan": "SP3BPN",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Non",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 161,
+        "singkatan": "SP3BPL",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Langsung",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 162,
+        "singkatan": "SP3BPG",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Ganti",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 163,
+        "singkatan": "SP3BPT",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Tambahan",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 164,
+        "singkatan": "SP3BPU",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 165,
+        "singkatan": "SP3BPLS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Langsung Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 166,
+        "singkatan": "SP3BPGS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Ganti Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 167,
+        "singkatan": "SP3BPTS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Tambahan Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 168,
+        "singkatan": "SP3BPUS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Uang Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 169,
+        "singkatan": "SP3BPNL",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Non Langsung",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 170,
+        "singkatan": "SP3BPNG",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Non Ganti",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 171,
+        "singkatan": "SP3BPNT",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Non Tambahan",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 172,
+        "singkatan": "SP3BPNU",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Non Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 173,
+        "singkatan": "SP3BPNLS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Non Langsung Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 174,
+        "singkatan": "SP3BPNGS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Non Ganti Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 175,
+        "singkatan": "SP3BPNTS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Non Tambahan Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 176,
+        "singkatan": "SP3BPNUS",
+        "penjelasan": "Surat Perintah Penyediaan Belanja PNS Non Uang Sementara",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 177,
+        "singkatan": "SP3BN",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 178,
+        "singkatan": "SP3BD",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 179,
+        "singkatan": "SP3BNL",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara Langsung",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 180,
+        "singkatan": "SP3BND",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara Daerah",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 181,
+        "singkatan": "SP3BNLS",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara Langsung Sementara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 182,
+        "singkatan": "SP3BNDS",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara Daerah Sementara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 183,
+        "singkatan": "SP3BDL",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah Langsung",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 184,
+        "singkatan": "SP3BDS",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah Sementara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 185,
+        "singkatan": "SP3BNP",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara PNS",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 186,
+        "singkatan": "SP3BNNP",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara Non PNS",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 187,
+        "singkatan": "SP3BDP",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah PNS",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 188,
+        "singkatan": "SP3BDNP",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah Non PNS",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 189,
+        "singkatan": "SP3BNPLS",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara PNS Langsung Sementara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 190,
+        "singkatan": "SP3BNNPLS",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara Non PNS Langsung Sementara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 191,
+        "singkatan": "SP3BDPLS",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah PNS Langsung Sementara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 192,
+        "singkatan": "SP3BDNPLS",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah Non PNS Langsung Sementara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 193,
+        "singkatan": "SP3BNPL",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara PNS Langsung",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 194,
+        "singkatan": "SP3BNNPL",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara Non PNS Langsung",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 195,
+        "singkatan": "SP3BDPL",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah PNS Langsung",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 196,
+        "singkatan": "SP3BDNPL",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah Non PNS Langsung",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 197,
+        "singkatan": "SP3BNPG",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara PNS Ganti",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 198,
+        "singkatan": "SP3BNNPG",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara Non PNS Ganti",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 199,
+        "singkatan": "SP3BDPG",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah PNS Ganti",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 200,
+        "singkatan": "SP3BDNPG",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah Non PNS Ganti",
+        "kategori": "Dokumen & Administrasi"
+    },
+
+    {
+        "no": 201,
+        "singkatan": "SP3BNPT",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara PNS Tambahan",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 202,
+        "singkatan": "SP3BNNPT",
+        "penjelasan": "Surat Perintah Penyediaan Barang Negara Non PNS Tambahan",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 203,
+        "singkatan": "SP3BDPT",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah PNS Tambahan",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 204,
+        "singkatan": "SP3BDNPT",
+        "penjelasan": "Surat Perintah Penyediaan Barang Daerah Non PNS Tambahan",
+        "kategori": "Dokumen & Administrasi"
     }
 ]

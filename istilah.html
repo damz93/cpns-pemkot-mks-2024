@@ -1,180 +1,266 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Istilah-istilah dalam PNS | CPNS Pemkot Makassar 2024 | by Dedy A Muzawwir</title>
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-</head>
-<style>
-    body {
-  font-family: 'Poppins', sans-serif; 
-            display: flex;
-            justify-content: center;
-            /* align-items: center; */
-            height: 100vh;
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-}
-
-.container {
-  max-width: 800px;
-  margin: auto;
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-  color: #007b83;
-}
-
-#search {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  border: 2px solid #007b83;
-  border-radius: 8px;
-}
-
-.item {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.item:last-child {
-  border-bottom: none;
-}
-
-.singkatan {
-  font-weight: bold;
-  color: #007b83;
-}
-
-.kategori {
-  font-size: 0.9em;
-  color: #666;
-}
-
-  #saweria-widget {
-          position: fixed;
-          bottom: 10px; 
-          left: 1%;
-          background: #1D234D;
-          padding: 10px 15px;
-          border-radius: 30px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-          z-index: 9999;
-          animation: popText 1s infinite alternate ease-in-out;
-          font-family: sans-serif;
-          font-size: 14px;
-          transition: transform 0.5s ease;
+            background-color: #f4f9f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-      
+
+        .header-wrapper {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: aliceblue;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .title-bar {
+            background-color: rgb(7, 42, 73);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        .title-bar img {
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .title-bar h2 {
+            margin: 10px 0 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .title-bar p {
+            margin: 5px 0 10px;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .search-bar {
+            padding: 10px 15px;
+            background-color: aliceblue;
+        }
+
+        #search {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #007b83;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #search:focus {
+            border-color: #005f66;
+        }
+
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #007b83;
+            margin-bottom: 20px;
+        }
+
+        .item {
+            background-color: #fff;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            padding: 15px;
+            border-left: 5px solid #007b83;
+            transition: transform 0.2s;
+        }
+
+        .item:hover {
+            transform: translateY(-2px);
+        }
+
+        .singkatan {
+            font-weight: 600;
+            color: #007b83;
+            margin-bottom: 5px;
+        }
+
+        .penjelasan {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .kategori {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        #saweria-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #1D234D;
+            padding: 10px 15px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            animation: popText 1.5s infinite alternate ease-in-out;
+            font-size: 14px;
+            transition: transform 0.3s ease, background 0.3s;
+        }
+
         #saweria-widget:hover {
-          transform: scale(1.2);
-          background: #3b448d;
+            transform: scale(1.1);
+            background: #3b448d;
         }
-      
+
+        #saweria-widget a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         #saweria-widget img {
-          width: 50px;
-          height: auto;
+            width: 35px;
+            height: auto;
         }
+
         @keyframes popText {
-            0% {
-                transform: scale(1);
-                text-shadow: 2px 2px 0px #000;
-            }
-
-            50% {
-                transform: scale(1.07);
-                text-shadow: 4px 4px 0px #000;
-            }
-
-            100% {
-                transform: scale(1);
-                text-shadow: 2px 2px 0px #000;
-            }
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
         }
 
-</style>
+        @media (max-width: 576px) {
+            .title-bar img {
+                height: 60px;
+            }
+
+            .title-bar h2 {
+                font-size: 1.2rem;
+            }
+
+            .title-bar p {
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            #saweria-widget {
+                bottom: 10px;
+                left: 10px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            #saweria-widget img {
+                width: 30px;
+            }
+        }
+    </style>
+</head>
 <body>
-  <div style="background-color:aliceblue;width: 100%; text-align: left;">
-        <div id="saweria-widget">
-            <a href="https://saweria.co/damz93" target="_blank" style="text-decoration: none; color: white;">
-                <img src="https://www.pngplay.com/wp-content/uploads/12/Killua-Zoldyck-Transparent-Image.png" alt="Donasi" style="width: 35px; vertical-align: middle;">
-                <span style="margin-left: 1px;font-family: poppins;">Boleh Kak Recehannya💖</span>
+    <!-- Saweria Widget -->
+    <div id="saweria-widget">
+        <a href="https://saweria.co/damz93" target="_blank">
+            <img src="https://www.pngplay.com/wp-content/uploads/12/Killua-Zoldyck-Transparent-Image.png" alt="Donasi">
+            <span>Boleh Kak Recehannya 💖</span>
+        </a>
+    </div>
+
+    <!-- Header Sticky -->
+    <div class="header-wrapper">
+        <div class="title-bar">
+            <a href="index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" alt="Logo Pemkot Makassar">
             </a>
+            <h2>📘 DAFTAR ISTILAH & SINGKATAN CPNS</h2>
+            <p>CPNS Pemerintah Kota Makassar 2024</p>
         </div>
-        <div style="background-color:aliceblue; position: sticky; top: 0; z-index: 1000;">
-            <h2 class="text-center pt-3" style="background-color:rgb(7, 42, 73);color:white;font-weight:bold;">
-                <a href="index.html"class="no-style"><img title="Kembali ke Menu Utama" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" height="80px" width="auto"></a><br>UPDATE USUL NIP
-            <p class="text-center pb-3" style="color:white;font-weight:120;font-size: 1.1rem;">
-                CPNS Pemerintah Kota Makassar 2024   
-            </p></h2>
+        <div class="search-bar container">
+            <input type="text" id="search" placeholder="Cari singkatan atau penjelasan..." autofocus autocomplete="off">
         </div>
+    </div>
+
+    <!-- Scrollable List -->
+    <div class="main-content">
         <div class="container">
-    <h1>📘 Daftar Istilah & Singkatan CPNS</h1>
+            <h1>📘 Daftar Istilah & Singkatan CPNS</h1>
+            <div id="list-container"></div>
+        </div>
+    </div>
 
-    <input type="text" autofocus autocomplete="off" id="search" placeholder="Cari singkatan atau penjelasan..." />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("list-container");
+            const searchInput = document.getElementById("search");
 
-    <div id="list-container"></div>
-  </div>
+            const loadData = async () => {
+                try {
+                    const response = await fetch("json/istilah.json");
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    const data = await response.json();
+                    let istilahList = data;
+                    renderList(istilahList);
 
+                    searchInput.addEventListener("input", () => {
+                        const keyword = searchInput.value.toLowerCase();
+                        const filtered = istilahList.filter(item =>
+                            item.singkatan.toLowerCase().includes(keyword) ||
+                            item.penjelasan.toLowerCase().includes(keyword) ||
+                            item.kategori.toLowerCase().includes(keyword)
+                        );
+                        renderList(filtered);
+                    });
+                } catch (error) {
+                    container.innerHTML = `<p style="color: red;">Gagal memuat data: ${error.message}</p>`;
+                }
+            };
 
-  
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-  const container = document.getElementById("list-container");
-  const searchInput = document.getElementById("search");
+            const renderList = (items) => {
+                container.innerHTML = "";
+                if (items.length === 0) {
+                    container.innerHTML = "<p>Tidak ada hasil ditemukan.</p>";
+                    return;
+                }
 
-  fetch("json/istilah.json")
-    .then(response => response.json())
-    .then(data => {
-      let istilahList = data;
-      renderList(istilahList);
+                items.forEach(item => {
+                    const div = document.createElement("div");
+                    div.className = "item";
+                    div.innerHTML = `
+                        <div class="singkatan">${item.no}. ${item.singkatan}</div>
+                        <div class="penjelasan">${item.penjelasan}</div>
+                        <div class="kategori">📂 ${item.kategori}</div>
+                    `;
+                    container.appendChild(div);
+                });
+            };
 
-      searchInput.addEventListener("input", function () {
-        const keyword = this.value.toLowerCase();
-        const filtered = istilahList.filter(item =>
-          item.singkatan.toLowerCase().includes(keyword) ||
-          item.penjelasan.toLowerCase().includes(keyword) ||
-          item.kategori.toLowerCase().includes(keyword)
-        );
-        renderList(filtered);
-      });
-    })
-    .catch(error => {
-      container.innerHTML = `<p style="color:red;">Gagal memuat data: ${error}</p>`;
-    });
-
-  function renderList(items) {
-    container.innerHTML = "";
-    if (items.length === 0) {
-      container.innerHTML = "<p>Tidak ada hasil.</p>";
-      return;
-    }
-
-    items.forEach(item => {
-      const div = document.createElement("div");
-      div.className = "item";
-      div.innerHTML = `
-        <div class="singkatan">${item.no}. ${item.singkatan}</div>
-        <div class="penjelasan">${item.penjelasan}</div>
-        <div class="kategori">📂 ${item.kategori}</div>
-      `;
-      container.appendChild(div);
-    });
-  }
-});
-
-</script>
+            loadData();
+        });
+    </script>
 </body>
 </html>
