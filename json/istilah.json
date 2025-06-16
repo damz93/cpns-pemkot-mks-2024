@@ -1,0 +1,392 @@
+[
+    {
+        "no": 1,
+        "singkatan": "SKPD",
+        "penjelasan": "Satuan Kerja Perangkat Daerah",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 2,
+        "singkatan": "OPD",
+        "penjelasan": "Organisasi Perangkat Daerah",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 3,
+        "singkatan": "DL",
+        "penjelasan": "Dinas Luar (keluar kantor untuk urusan kedinasan)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 4,
+        "singkatan": "UMPEG",
+        "penjelasan": "Urusan Kepegawaian",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 5,
+        "singkatan": "SEKDIS",
+        "penjelasan": "Sekretaris Dinas",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 6,
+        "singkatan": "KABID",
+        "penjelasan": "Kepala Bidang",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 7,
+        "singkatan": "KASUBAG",
+        "penjelasan": "Kepala Sub Bagian",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 8,
+        "singkatan": "PLT",
+        "penjelasan": "Pelaksana Tugas",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 9,
+        "singkatan": "PLH",
+        "penjelasan": "Pelaksana Harian",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 10,
+        "singkatan": "SK",
+        "penjelasan": "Surat Keputusan",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 11,
+        "singkatan": "SPT",
+        "penjelasan": "Surat Perintah Tugas",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 12,
+        "singkatan": "SPPD",
+        "penjelasan": "Surat Perintah Perjalanan Dinas",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 13,
+        "singkatan": "SPJ",
+        "penjelasan": "Surat Pertanggungjawaban",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 14,
+        "singkatan": "SKP",
+        "penjelasan": "Sasaran Kinerja Pegawai",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 15,
+        "singkatan": "LHKPN",
+        "penjelasan": "Laporan Harta Kekayaan Penyelenggara Negara",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 16,
+        "singkatan": "LHKASN",
+        "penjelasan": "Laporan Harta Kekayaan ASN",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 17,
+        "singkatan": "DPA",
+        "penjelasan": "Dokumen Pelaksanaan Anggaran",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 18,
+        "singkatan": "RKA",
+        "penjelasan": "Rencana Kerja dan Anggaran",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 19,
+        "singkatan": "LPJ",
+        "penjelasan": "Laporan Pertanggungjawaban",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 20,
+        "singkatan": "BAST",
+        "penjelasan": "Berita Acara Serah Terima",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 21,
+        "singkatan": "SPM",
+        "penjelasan": "Surat Perintah Membayar",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 22,
+        "singkatan": "SP2D",
+        "penjelasan": "Surat Perintah Pencairan Dana",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 23,
+        "singkatan": "SPU",
+        "penjelasan": "Satuan Pengelola Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 24,
+        "singkatan": "BKU",
+        "penjelasan": "Buku Kas Umum",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 25,
+        "singkatan": "UP",
+        "penjelasan": "Uang Persediaan",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 26,
+        "singkatan": "GU",
+        "penjelasan": "Ganti Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 27,
+        "singkatan": "TU",
+        "penjelasan": "Tambahan Uang",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 28,
+        "singkatan": "LS",
+        "penjelasan": "Langsung (pembayaran langsung ke pihak ketiga)",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 29,
+        "singkatan": "NIP",
+        "penjelasan": "Nomor Induk Pegawai",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 30,
+        "singkatan": "NRK",
+        "penjelasan": "Nomor Register Kepegawaian",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 31,
+        "singkatan": "KGB",
+        "penjelasan": "Kenaikan Gaji Berkala",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 32,
+        "singkatan": "KP",
+        "penjelasan": "Kenaikan Pangkat",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 33,
+        "singkatan": "Cuti TK",
+        "penjelasan": "Cuti Tanpa Keterangan",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 34,
+        "singkatan": "Absen DL",
+        "penjelasan": "Absen karena Dinas Luar",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 35,
+        "singkatan": "SKM",
+        "penjelasan": "Survei Kepuasan Masyarakat",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 36,
+        "singkatan": "Renja",
+        "penjelasan": "Rencana Kerja",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 37,
+        "singkatan": "Renstra",
+        "penjelasan": "Rencana Strategis",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 38,
+        "singkatan": "SPIP",
+        "penjelasan": "Sistem Pengendalian Intern Pemerintah",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 39,
+        "singkatan": "LAKIP",
+        "penjelasan": "Laporan Akuntabilitas Kinerja Instansi Pemerintah",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 40,
+        "singkatan": "SOP",
+        "penjelasan": "Standar Operasional Prosedur",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 41,
+        "singkatan": "PNS",
+        "penjelasan": "Pegawai Negeri Sipil",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 42,
+        "singkatan": "CPNS",
+        "penjelasan": "Calon Pegawai Negeri Sipil",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 43,
+        "singkatan": "PPPK",
+        "penjelasan": "Pegawai Pemerintah dengan Perjanjian Kerja",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 44,
+        "singkatan": "BKN",
+        "penjelasan": "Badan Kepegawaian Negara",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 45,
+        "singkatan": "SSCASN",
+        "penjelasan": "Sistem Seleksi Calon Aparatur Sipil Negara",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 46,
+        "singkatan": "SKB",
+        "penjelasan": "Seleksi Kompetensi Bidang",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 47,
+        "singkatan": "SKD",
+        "penjelasan": "Seleksi Kompetensi Dasar",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 48,
+        "singkatan": "CAT",
+        "penjelasan": "Computer Assisted Test",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 49,
+        "singkatan": "TKP",
+        "penjelasan": "Tes Karakteristik Pribadi",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 50,
+        "singkatan": "TIU",
+        "penjelasan": "Tes Intelegensi Umum",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 51,
+        "singkatan": "TWK",
+        "penjelasan": "Tes Wawasan Kebangsaan",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 52,
+        "singkatan": "P3K",
+        "penjelasan": "Pegawai Pemerintah dengan Perjanjian Kerja (sinonim PPPK)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 53,
+        "singkatan": "Diklat",
+        "penjelasan": "Pendidikan dan Pelatihan",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 54,
+        "singkatan": "Pranikah",
+        "penjelasan": "Pendidikan Pra Nikah (untuk CPNS sebelum pengangkatan)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 55,
+        "singkatan": "BKD",
+        "penjelasan": "Badan Kepegawaian Daerah",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 56,
+        "singkatan": "KASN",
+        "penjelasan": "Komisi Aparatur Sipil Negara",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 57,
+        "singkatan": "JFT",
+        "penjelasan": "Jabatan Fungsional Tertentu",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 58,
+        "singkatan": "JFU",
+        "penjelasan": "Jabatan Fungsional Umum",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 59,
+        "singkatan": "PPK",
+        "penjelasan": "Pejabat Pembuat Komitmen",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 60,
+        "singkatan": "PPTK",
+        "penjelasan": "Pejabat Pelaksana Teknis Kegiatan",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 61,
+        "singkatan": "BPKAD",
+        "penjelasan": "Badan Pengelola Keuangan dan Aset Daerah",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 62,
+        "singkatan": "SIMPEG",
+        "penjelasan": "Sistem Informasi Kepegawaian",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 63,
+        "singkatan": "TASPEN",
+        "penjelasan": "Tabungan dan Asuransi Pegawai Negeri",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 64,
+        "singkatan": "TPT",
+        "penjelasan": "Tunjangan Penghasilan Tambahan",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 65,
+        "singkatan": "TPP",
+        "penjelasan": "Tambahan Penghasilan Pegawai",
+        "kategori": "Keuangan & Pembayaran"
+    }
+]
