@@ -1553,5 +1553,305 @@
         "singkatan": "SKP Tahunan",
         "penjelasan": "Sasaran Kinerja Pegawai Tahunan (dokumen yang berisi target kinerja pegawai untuk satu tahun)",
         "kategori": "Kepegawaian"
+    },
+    {
+        "no": 251,
+        "singkatan": "JF Dokter",
+        "penjelasan": "Jabatan Fungsional Dokter (jabatan fungsional untuk dokter, dengan tingkatan seperti Dokter Pertama, Muda, Madya, dan Utama)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 252,
+        "singkatan": "JF Perawat",
+        "penjelasan": "Jabatan Fungsional Perawat (jabatan fungsional untuk perawat, dengan tingkatan seperti Perawat Terampil, Mahir, hingga Ahli)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 253,
+        "singkatan": "JF Bidan",
+        "penjelasan": "Jabatan Fungsional Bidan (jabatan fungsional untuk bidan, dengan tingkatan seperti Bidan Terampil, Mahir, hingga Ahli)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 254,
+        "singkatan": "JF Apoteker",
+        "penjelasan": "Jabatan Fungsional Apoteker (jabatan fungsional untuk apoteker, dengan tingkatan seperti Apoteker Pertama, Muda, Madya, dan Utama)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 255,
+        "singkatan": "JF Nakes",
+        "penjelasan": "Jabatan Fungsional Tenaga Kesehatan (jabatan fungsional untuk tenaga kesehatan lainnya, seperti analis kesehatan, radiografer, dll.)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 256,
+        "singkatan": "Dinkes",
+        "penjelasan": "Dinas Kesehatan (unit organisasi di pemda yang menangani urusan kesehatan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 257,
+        "singkatan": "Kemenkes",
+        "penjelasan": "Kementerian Kesehatan Republik Indonesia (lembaga pusat yang mengatur kebijakan kesehatan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 258,
+        "singkatan": "Puskesmas",
+        "penjelasan": "Pusat Kesehatan Masyarakat (unit pelayanan kesehatan tingkat primer di bawah Dinas Kesehatan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 259,
+        "singkatan": "RSUD",
+        "penjelasan": "Rumah Sakit Umum Daerah (rumah sakit milik pemerintah daerah)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 260,
+        "singkatan": "RSUP",
+        "penjelasan": "Rumah Sakit Umum Pusat (rumah sakit milik pemerintah pusat di bawah Kemenkes)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 261,
+        "singkatan": "BPJS Kesehatan",
+        "penjelasan": "Badan Penyelenggara Jaminan Sosial Kesehatan (lembaga yang mengelola jaminan kesehatan nasional)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 262,
+        "singkatan": "JKN",
+        "penjelasan": "Jaminan Kesehatan Nasional (program asuransi kesehatan yang dikelola BPJS Kesehatan)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 263,
+        "singkatan": "INA-CBGs",
+        "penjelasan": "Indonesia Case Base Groups (sistem pembayaran berbasis kelompok diagnosis untuk pelayanan kesehatan)",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 264,
+        "singkatan": "FKTP",
+        "penjelasan": "Fasilitas Kesehatan Tingkat Pertama (fasilitas kesehatan primer seperti Puskesmas atau klinik)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 265,
+        "singkatan": "FKRTL",
+        "penjelasan": "Fasilitas Kesehatan Rujukan Tingkat Lanjutan (fasilitas kesehatan seperti rumah sakit untuk rujukan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 266,
+        "singkatan": "KARS",
+        "penjelasan": "Komisi Akreditasi Rumah Sakit (lembaga yang mengakreditasi standar pelayanan rumah sakit)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 267,
+        "singkatan": "SPGDT",
+        "penjelasan": "Sistem Penanggulangan Gawat Darurat Terpadu (sistem pelayanan darurat terkoordinasi)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 268,
+        "singkatan": "IGD",
+        "penjelasan": "Instalasi Gawat Darurat (unit pelayanan darurat di rumah sakit)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 269,
+        "singkatan": "ICU",
+        "penjelasan": "Intensive Care Unit (unit perawatan intensif di rumah sakit)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 270,
+        "singkatan": "UPT Kesehatan",
+        "penjelasan": "Unit Pelaksana Teknis Kesehatan (unit teknis di bawah Dinas Kesehatan, seperti laboratorium kesehatan)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 271,
+        "singkatan": "SIPT",
+        "penjelasan": "Surat Izin Praktik Tenaga Kesehatan (izin resmi untuk tenaga kesehatan seperti dokter atau perawat)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 272,
+        "singkatan": "STR",
+        "penjelasan": "Surat Tanda Registrasi (tanda registrasi profesi tenaga kesehatan)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 273,
+        "singkatan": "SIPD",
+        "penjelasan": "Surat Izin Praktik Dokter (izin khusus untuk praktik dokter)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 274,
+        "singkatan": "SIPB",
+        "penjelasan": "Surat Izin Praktik Bidan (izin khusus untuk praktik bidan)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 275,
+        "singkatan": "SIPA",
+        "penjelasan": "Surat Izin Praktik Apoteker (izin khusus untuk praktik apoteker)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 276,
+        "singkatan": "Promkes",
+        "penjelasan": "Promosi Kesehatan (program untuk meningkatkan kesadaran kesehatan masyarakat)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 277,
+        "singkatan": "Kesmas",
+        "penjelasan": "Kesehatan Masyarakat (bidang yang berfokus pada pencegahan dan promosi kesehatan di masyarakat)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 278,
+        "singkatan": "UKM",
+        "penjelasan": "Upaya Kesehatan Masyarakat (kegiatan kesehatan berbasis komunitas, seperti di Puskesmas)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 279,
+        "singkatan": "UKP",
+        "penjelasan": "Upaya Kesehatan Perorangan (kegiatan kesehatan berbasis individu, seperti pengobatan di Puskesmas)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 280,
+        "singkatan": "Posyandu",
+        "penjelasan": "Pos Pelayanan Terpadu (layanan kesehatan dasar di tingkat desa/kelurahan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 281,
+        "singkatan": "Posbindu",
+        "penjelasan": "Pos Binaan Terpadu (layanan kesehatan untuk pencegahan penyakit tidak menular)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 282,
+        "singkatan": "Pustu",
+        "penjelasan": "Puskesmas Pembantu (unit pelayanan kesehatan di bawah Puskesmas untuk wilayah terpencil)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 283,
+        "singkatan": "Polindes",
+        "penjelasan": "Pondok Bersalin Desa (fasilitas persalinan di tingkat desa)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 284,
+        "singkatan": "KIA",
+        "penjelasan": "Kesehatan Ibu dan Anak (program kesehatan untuk ibu hamil, melahirkan, dan anak)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 285,
+        "singkatan": "MTBS",
+        "penjelasan": "Manajemen Terpadu Balita Sakit (pendekatan terpadu untuk penanganan balita sakit)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 286,
+        "singkatan": "IMCI",
+        "penjelasan": "Integrated Management of Childhood Illness (pendekatan global untuk manajemen penyakit anak)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 287,
+        "singkatan": "PMTCT",
+        "penjelasan": "Prevention of Mother-to-Child Transmission (program pencegahan penularan HIV dari ibu ke anak)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 288,
+        "singkatan": "VCT",
+        "penjelasan": "Voluntary Counseling and Testing (layanan konseling dan tes HIV secara sukarela)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 289,
+        "singkatan": "TB DOTS",
+        "penjelasan": "Tuberculosis Directly Observed Treatment Short-course (strategi pengobatan TB dengan pengawasan langsung)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 290,
+        "singkatan": "Gizi Buruk",
+        "penjelasan": "Program Penanganan Gizi Buruk (program untuk menangani kasus kekurangan gizi pada anak)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 291,
+        "singkatan": "PIS-PK",
+        "penjelasan": "Program Indonesia Sehat-Pendekatan Keluarga (program kesehatan berbasis keluarga di Puskesmas)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 292,
+        "singkatan": "SKDN",
+        "penjelasan": "Survei Kesehatan Dasar Nasional (survei untuk memantau indikator kesehatan nasional)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 293,
+        "singkatan": "SIHA",
+        "penjelasan": "Sistem Informasi Kesehatan (sistem untuk pengelolaan data kesehatan)",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 294,
+        "singkatan": "SIRS",
+        "penjelasan": "Sistem Informasi Rumah Sakit (sistem untuk pengelolaan data rumah sakit)",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 295,
+        "singkatan": "SP2TP",
+        "penjelasan": "Sistem Penanganan Pasien Tindak Pelayanan (sistem untuk menangani pengaduan pelayanan kesehatan)",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 296,
+        "singkatan": "BOK",
+        "penjelasan": "Bantuan Operasional Kesehatan (dana untuk operasional Puskesmas dan program kesehatan)",
+        "kategori": "Keuangan & Pembayaran"
+    },
+    {
+        "no": 297,
+        "singkatan": "DHO",
+        "penjelasan": "District Health Office (sinonim Dinas Kesehatan di tingkat kabupaten/kota)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 298,
+        "singkatan": "PKM",
+        "penjelasan": "Puskesmas (singkatan alternatif untuk Pusat Kesehatan Masyarakat)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 299,
+        "singkatan": "PTM",
+        "penjelasan": "Penyakit Tidak Menular (program kesehatan untuk menangani penyakit seperti diabetes, hipertensi)",
+        "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 300,
+        "singkatan": "PM",
+        "penjelasan": "Penyakit Menular (program kesehatan untuk menangani penyakit menular seperti TB, HIV/AIDS)",
+        "kategori": "Program Kesehatan"
     }
 ]
