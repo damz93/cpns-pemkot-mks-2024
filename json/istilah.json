@@ -1853,5 +1853,305 @@
         "singkatan": "PM",
         "penjelasan": "Penyakit Menular (program kesehatan untuk menangani penyakit menular seperti TB, HIV/AIDS)",
         "kategori": "Program Kesehatan"
+    },
+    {
+        "no": 301,
+        "singkatan": "Setda",
+        "penjelasan": "Sekretariat Daerah (OPD yang membantu kepala daerah dalam penyusunan kebijakan dan koordinasi administratif)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 302,
+        "singkatan": "Bappeda",
+        "penjelasan": "Badan Perencanaan Pembangunan Daerah (OPD yang bertugas menyusun rencana pembangunan daerah)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 303,
+        "singkatan": "DPUPR",
+        "penjelasan": "Dinas Pekerjaan Umum dan Penataan Ruang (OPD yang menangani infrastruktur dan tata ruang)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 304,
+        "singkatan": "Disdik",
+        "penjelasan": "Dinas Pendidikan (OPD yang mengelola urusan pendidikan di daerah)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 305,
+        "singkatan": "Dishub",
+        "penjelasan": "Dinas Perhubungan (OPD yang menangani urusan transportasi dan lalu lintas)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 306,
+        "singkatan": "Disnaker",
+        "penjelasan": "Dinas Tenaga Kerja (OPD yang mengelola urusan ketenagakerjaan dan transmigrasi)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 307,
+        "singkatan": "DPMD",
+        "penjelasan": "Dinas Pemberdayaan Masyarakat dan Desa (OPD yang menangani pemberdayaan masyarakat dan pemerintahan desa)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 308,
+        "singkatan": "Disperindag",
+        "penjelasan": "Dinas Perindustrian dan Perdagangan (OPD yang mengelola urusan industri dan perdagangan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 309,
+        "singkatan": "Diskop UKM",
+        "penjelasan": "Dinas Koperasi dan Usaha Kecil Menengah (OPD yang menangani koperasi dan pengembangan UMKM)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 310,
+        "singkatan": "DLH",
+        "penjelasan": "Dinas Lingkungan Hidup (OPD yang bertugas mengelola lingkungan hidup dan kebersihan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 311,
+        "singkatan": "DPMPTSP",
+        "penjelasan": "Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu (OPD yang menangani perizinan dan investasi)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 312,
+        "singkatan": "Dispar",
+        "penjelasan": "Dinas Pariwisata (OPD yang mengelola urusan pariwisata dan kebudayaan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 313,
+        "singkatan": "Diskominfo",
+        "penjelasan": "Dinas Komunikasi dan Informatika (OPD yang menangani komunikasi, informasi, dan teknologi)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 314,
+        "singkatan": "Dispora",
+        "penjelasan": "Dinas Pemuda dan Olahraga (OPD yang mengelola urusan kepemudaan dan olahraga)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 315,
+        "singkatan": "DKP",
+        "penjelasan": "Dinas Kelautan dan Perikanan (OPD yang menangani urusan kelautan dan perikanan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 316,
+        "singkatan": "Distan",
+        "penjelasan": "Dinas Pertanian (OPD yang mengelola urusan pertanian dan perkebunan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 317,
+        "singkatan": "DPPPA",
+        "penjelasan": "Dinas Pemberdayaan Perempuan dan Perlindungan Anak (OPD yang menangani isu gender dan perlindungan anak)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 318,
+        "singkatan": "DKUKM",
+        "penjelasan": "Dinas Koperasi, Usaha Kecil, dan Menengah (sinonim Diskop UKM, variasi nama di beberapa daerah)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 319,
+        "singkatan": "Bapenda",
+        "penjelasan": "Badan Pendapatan Daerah (OPD yang mengelola pendapatan asli daerah, seperti pajak dan retribusi)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 320,
+        "singkatan": "BKPSDM",
+        "penjelasan": "Badan Kepegawaian dan Pengembangan Sumber Daya Manusia (OPD yang menangani kepegawaian dan pelatihan ASN)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 321,
+        "singkatan": "BKD",
+        "penjelasan": "Badan Kepegawaian Daerah (sinonim BKPSDM di beberapa daerah, fokus pada administrasi kepegawaian)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 322,
+        "singkatan": "BPKAD",
+        "penjelasan": "Badan Pengelola Keuangan dan Aset Daerah (OPD yang mengelola keuangan dan aset daerah)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 323,
+        "singkatan": "Bag. Hukum",
+        "penjelasan": "Bagian Hukum (unit di Setda yang menangani peraturan perundang-undangan dan bantuan hukum)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 324,
+        "singkatan": "Bag. Umum",
+        "penjelasan": "Bagian Umum (unit di Setda yang menangani administrasi umum dan keprotokolan)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 325,
+        "singkatan": "Bag. Organisasi",
+        "penjelasan": "Bagian Organisasi (unit di Setda yang menangani tata kelola organisasi dan kepegawaian)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 326,
+        "singkatan": "Bag. Perekonomian",
+        "penjelasan": "Bagian Perekonomian (unit di Setda yang menangani perencanaan dan pengembangan ekonomi daerah)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 327,
+        "singkatan": "Bag. Protokol",
+        "penjelasan": "Bagian Protokol dan Komunikasi Pimpinan (unit di Setda yang mengelola protokol dan komunikasi kepala daerah)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 328,
+        "singkatan": "Bag. Kesra",
+        "penjelasan": "Bagian Kesejahteraan Rakyat (unit di Setda yang menangani urusan sosial dan kesejahteraan masyarakat)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 329,
+        "singkatan": "Bag. Tata Usaha",
+        "penjelasan": "Bagian Tata Usaha (unit di Setda atau OPD yang menangani administrasi dan surat-menyurat)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 330,
+        "singkatan": "Satpol PP",
+        "penjelasan": "Satuan Polisi Pamong Praja (OPD yang menegakkan peraturan daerah dan ketertiban umum)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 331,
+        "singkatan": "Damkar",
+        "penjelasan": "Dinas Pemadam Kebakaran (OPD yang menangani pencegahan dan penanggulangan kebakaran)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 332,
+        "singkatan": "BPBD",
+        "penjelasan": "Badan Penanggulangan Bencana Daerah (OPD yang menangani mitigasi dan penanggulangan bencana)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 333,
+        "singkatan": "Bakesbangpol",
+        "penjelasan": "Badan Kesatuan Bangsa dan Politik (OPD yang menangani urusan ideologi, politik, dan keamanan dalam negeri)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 334,
+        "singkatan": "DPPKB",
+        "penjelasan": "Dinas Pengendalian Penduduk dan Keluarga Berencana (OPD yang mengelola program keluarga berencana dan kependudukan)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 335,
+        "singkatan": "Disk Dukcapil",
+        "penjelasan": "Dinas Kependudukan dan Pencatatan Sipil (OPD yang menangani administrasi kependudukan dan catatan sipil)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 336,
+        "singkatan": "Dinsos",
+        "penjelasan": "Dinas Sosial (OPD yang mengelola urusan kesejahteraan sosial dan bantuan sosial)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 337,
+        "singkatan": "Inspektorat",
+        "penjelasan": "Inspektorat Daerah (OPD yang melakukan pengawasan internal terhadap kinerja dan keuangan pemda)",
+        "kategori": "Lembaga & Instansi"
+    },
+    {
+        "no": 338,
+        "singkatan": "Kec",
+        "penjelasan": "Kecamatan (unit administratif di bawah kabupaten/kota, dipimpin oleh Camat, termasuk sebagai bagian OPD)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 339,
+        "singkatan": "Kel",
+        "penjelasan": "Kelurahan (unit administratif di bawah kecamatan, dipimpin oleh Lurah, termasuk sebagai bagian OPD)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 340,
+        "singkatan": "Sekcam",
+        "penjelasan": "Sekretaris Camat (jabatan yang membantu Camat dalam administrasi kecamatan)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 341,
+        "singkatan": "UPTD",
+        "penjelasan": "Unit Pelaksana Teknis Daerah (unit teknis di bawah OPD, seperti UPTD Pendidikan atau UPTD Kesehatan)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 342,
+        "singkatan": "Kepala OPD",
+        "penjelasan": "Kepala Organisasi Perangkat Daerah (pimpinan OPD, seperti Kepala Dinas atau Kepala Badan)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 343,
+        "singkatan": "Sekretaris OPD",
+        "penjelasan": "Sekretaris Organisasi Perangkat Daerah (jabatan yang membantu Kepala OPD dalam administrasi)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 344,
+        "singkatan": "Tupoksi",
+        "penjelasan": "Tugas Pokok dan Fungsi (uraian tugas dan tanggung jawab OPD atau jabatan)",
+        "kategori": "Lain-lain"
+    },
+    {
+        "no": 345,
+        "singkatan": "SOTK",
+        "penjelasan": "Struktur Organisasi dan Tata Kerja (rancangan organisasi dan prosedur kerja OPD)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 346,
+        "singkatan": "Perda",
+        "penjelasan": "Peraturan Daerah (produk hukum yang dibuat DPRD dan kepala daerah, mengatur tugas OPD)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 347,
+        "singkatan": "Perkada",
+        "penjelasan": "Peraturan Kepala Daerah (aturan yang dikeluarkan kepala daerah untuk operasional OPD)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 348,
+        "singkatan": "RPJMD",
+        "penjelasan": "Rencana Pembangunan Jangka Menengah Daerah (dokumen perencanaan 5 tahunan yang menjadi acuan OPD)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 349,
+        "singkatan": "RKPD",
+        "penjelasan": "Rencana Kerja Pemerintah Daerah (dokumen perencanaan tahunan yang menjadi acuan OPD)",
+        "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 350,
+        "singkatan": "PPAS",
+        "penjelasan": "Prioritas dan Plafon Anggaran Sementara (dokumen yang menjadi dasar penyusunan APBD oleh OPD)",
+        "kategori": "Dokumen & Administrasi"
     }
 ]
