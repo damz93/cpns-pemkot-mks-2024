@@ -219,26 +219,31 @@
             const searchInput = document.getElementById("search");
 
             const loadData = async () => {
-                try {
-                    const response = await fetch("json/istilah.json");
-                    if (!response.ok) throw new Error("Network response was not ok");
-                    const data = await response.json();
-                    let istilahList = data;
-                    renderList(istilahList);
+    try {
+        const response = await fetch("json/istilah.json");
+        if (!response.ok) throw new Error("Network response was not ok");
+        let data = await response.json();
 
-                    searchInput.addEventListener("input", () => {
-                        const keyword = searchInput.value.toLowerCase();
-                        const filtered = istilahList.filter(item =>
-                            item.singkatan.toLowerCase().includes(keyword) ||
-                            item.penjelasan.toLowerCase().includes(keyword) ||
-                            item.kategori.toLowerCase().includes(keyword)
-                        );
-                        renderList(filtered);
-                    });
-                } catch (error) {
-                    container.innerHTML = `<p style="color: red;">Gagal memuat data: ${error.message}</p>`;
-                }
-            };
+        // 🔽 Urutkan berdasarkan singkatan ASC
+        data.sort((a, b) => a.singkatan.localeCompare(b.singkatan));
+
+        let istilahList = data;
+        renderList(istilahList);
+
+        searchInput.addEventListener("input", () => {
+            const keyword = searchInput.value.toLowerCase();
+            const filtered = istilahList.filter(item =>
+                item.singkatan.toLowerCase().includes(keyword) ||
+                item.penjelasan.toLowerCase().includes(keyword) ||
+                item.kategori.toLowerCase().includes(keyword)
+            );
+            renderList(filtered);
+        });
+    } catch (error) {
+        container.innerHTML = `<p style="color: red;">Gagal memuat data: ${error.message}</p>`;
+    }
+};
+
 
             const renderList = (items) => {
                 container.innerHTML = "";
@@ -251,7 +256,7 @@
                     const div = document.createElement("div");
                     div.className = "item";
                     div.innerHTML = `
-                        <div class="singkatan">${item.no}. ${item.singkatan}</div>
+                        <div class="singkatan">${item.singkatan}</div>
                         <div class="penjelasan">${item.penjelasan}</div>
                         <div class="kategori">📂 ${item.kategori}</div>
                     `;
