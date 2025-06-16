@@ -1223,5 +1223,335 @@
         "singkatan": "SP3BDNPT",
         "penjelasan": "Surat Perintah Penyediaan Barang Daerah Non PNS Tambahan",
         "kategori": "Dokumen & Administrasi"
+    },
+    {
+        "no": 201,
+        "singkatan": "Gol. I",
+        "penjelasan": "Golongan I (terdiri dari I/a, I/b, I/c, I/d, biasanya untuk jabatan pelaksana tingkat dasar)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 202,
+        "singkatan": "Gol. II",
+        "penjelasan": "Golongan II (terdiri dari II/a, II/b, II/c, II/d, biasanya untuk jabatan pelaksana menengah)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 203,
+        "singkatan": "Gol. III",
+        "penjelasan": "Golongan III (terdiri dari III/a, III/b, III/c, III/d, biasanya untuk jabatan pengawas atau fungsional awal)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 204,
+        "singkatan": "Gol. IV",
+        "penjelasan": "Golongan IV (terdiri dari IV/a, IV/b, IV/c, IV/d, IV/e, biasanya untuk jabatan pimpinan atau fungsional tinggi)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 205,
+        "singkatan": "Eselon I",
+        "penjelasan": "Tingkatan jabatan struktural tertinggi (biasanya pejabat pimpinan tinggi madya, seperti Direktur Jenderal atau Kepala Badan)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 206,
+        "singkatan": "Eselon II",
+        "penjelasan": "Tingkatan jabatan struktural menengah tinggi (biasanya pejabat pimpinan tinggi pratama, seperti Kepala Dinas atau Direktur)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 207,
+        "singkatan": "Eselon III",
+        "penjelasan": "Tingkatan jabatan struktural menengah (biasanya pejabat administrator, seperti Kepala Bidang atau Kepala Seksi)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 208,
+        "singkatan": "Eselon IV",
+        "penjelasan": "Tingkatan jabatan struktural rendah (biasanya pejabat pengawas, seperti Kepala Sub Bagian atau Kepala Urusan)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 209,
+        "singkatan": "JPT Madya",
+        "penjelasan": "Jabatan Pimpinan Tinggi Madya (setara Eselon I, misalnya Sekretaris Jenderal atau Direktur Jenderal)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 210,
+        "singkatan": "JPT Pratama",
+        "penjelasan": "Jabatan Pimpinan Tinggi Pratama (setara Eselon II, misalnya Kepala Dinas atau Kepala Biro)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 211,
+        "singkatan": "JF",
+        "penjelasan": "Jabatan Fungsional (jabatan yang didasarkan pada keahlian dan keterampilan tertentu)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 212,
+        "singkatan": "JFA",
+        "penjelasan": "Jabatan Fungsional Ahli (jabatan fungsional tingkat lanjutan, seperti Ahli Madya atau Ahli Utama)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 213,
+        "singkatan": "JFP",
+        "penjelasan": "Jabatan Fungsional Pertama (jabatan fungsional tingkat awal, seperti Ahli Pertama)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 214,
+        "singkatan": "JFK",
+        "penjelasan": "Jabatan Fungsional Keterampilan (jabatan fungsional berbasis keterampilan teknis, seperti Terampil atau Mahir)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 215,
+        "singkatan": "JA",
+        "penjelasan": "Jabatan Administrator (jabatan struktural setara Eselon III, misalnya Kepala Bidang)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 216,
+        "singkatan": "JP",
+        "penjelasan": "Jabatan Pengawas (jabatan struktural setara Eselon IV, misalnya Kepala Sub Bagian)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 217,
+        "singkatan": "JPS",
+        "penjelasan": "Jabatan Pelaksana (jabatan non-struktural untuk tugas-tugas operasional)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 218,
+        "singkatan": "AK",
+        "penjelasan": "Angka Kredit (poin yang digunakan untuk menilai kinerja jabatan fungsional)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 219,
+        "singkatan": "PTP",
+        "penjelasan": "Pejabat Tinggi Pratama (sinonim JPT Pratama, misalnya Kepala Dinas)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 220,
+        "singkatan": "PTM",
+        "penjelasan": "Pejabat Tinggi Madya (sinonim JPT Madya, misalnya Sekretaris Jenderal)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 221,
+        "singkatan": "Gol. I/a",
+        "penjelasan": "Golongan I/a (tingkat terendah dalam Golongan I, biasanya untuk lulusan SD atau setara)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 222,
+        "singkatan": "Gol. I/b",
+        "penjelasan": "Golongan I/b (tingkat kedua dalam Golongan I, biasanya untuk lulusan SMP atau setara)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 223,
+        "singkatan": "Gol. I/c",
+        "penjelasan": "Golongan I/c (tingkat ketiga dalam Golongan I, biasanya untuk tenaga teknis dasar)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 224,
+        "singkatan": "Gol. I/d",
+        "penjelasan": "Golongan I/d (tingkat tertinggi dalam Golongan I, biasanya untuk tenaga teknis dasar dengan pengalaman)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 225,
+        "singkatan": "Gol. II/a",
+        "penjelasan": "Golongan II/a (tingkat terendah dalam Golongan II, biasanya untuk lulusan SMA atau setara)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 226,
+        "singkatan": "Gol. II/b",
+        "penjelasan": "Golongan II/b (tingkat kedua dalam Golongan II, biasanya untuk lulusan SMA dengan pengalaman)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 227,
+        "singkatan": "Gol. II/c",
+        "penjelasan": "Golongan II/c (tingkat ketiga dalam Golongan II, biasanya untuk tenaga teknis menengah)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 228,
+        "singkatan": "Gol. II/d",
+        "penjelasan": "Golongan II/d (tingkat tertinggi dalam Golongan II, biasanya untuk tenaga teknis menengah dengan pengalaman)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 229,
+        "singkatan": "Gol. III/a",
+        "penjelasan": "Golongan III/a (tingkat terendah dalam Golongan III, biasanya untuk lulusan D3 atau setara)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 230,
+        "singkatan": "Gol. III/b",
+        "penjelasan": "Golongan III/b (tingkat kedua dalam Golongan III, biasanya untuk lulusan S1 awal atau D3 dengan pengalaman)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 231,
+        "singkatan": "Gol. III/c",
+        "penjelasan": "Golongan III/c (tingkat ketiga dalam Golongan III, biasanya untuk jabatan pengawas atau fungsional menengah)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 232,
+        "singkatan": "Gol. III/d",
+        "penjelasan": "Golongan III/d (tingkat tertinggi dalam Golongan III, biasanya untuk jabatan pengawas senior atau fungsional menengah)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 233,
+        "singkatan": "Gol. IV/a",
+        "penjelasan": "Golongan IV/a (tingkat terendah dalam Golongan IV, biasanya untuk lulusan S1 dengan pengalaman atau jabatan fungsional madya)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 234,
+        "singkatan": "Gol. IV/b",
+        "penjelasan": "Golongan IV/b (tingkat kedua dalam Golongan IV, biasanya untuk jabatan fungsional madya dengan pengalaman)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 235,
+        "singkatan": "Gol. IV/c",
+        "penjelasan": "Golongan IV/c (tingkat ketiga dalam Golongan IV, biasanya untuk jabatan fungsional utama atau pimpinan menengah)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 236,
+        "singkatan": "Gol. IV/d",
+        "penjelasan": "Golongan IV/d (tingkat keempat dalam Golongan IV, biasanya untuk jabatan pimpinan tinggi atau fungsional utama senior)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 237,
+        "singkatan": "Gol. IV/e",
+        "penjelasan": "Golongan IV/e (tingkat tertinggi dalam Golongan IV, biasanya untuk pejabat pimpinan tinggi utama)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 238,
+        "singkatan": "JF Ahli Pertama",
+        "penjelasan": "Jabatan Fungsional Ahli Pertama (tingkat awal jabatan fungsional berbasis keahlian, biasanya Golongan III/a atau III/b)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 239,
+        "singkatan": "JF Ahli Muda",
+        "penjelasan": "Jabatan Fungsional Ahli Muda (tingkat menengah jabatan fungsional, biasanya Golongan III/c atau III/d)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 240,
+        "singkatan": "JF Ahli Madya",
+        "penjelasan": "Jabatan Fungsional Ahli Madya (tingkat lanjutan jabatan fungsional, biasanya Golongan IV/a atau IV/b)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 241,
+        "singkatan": "JF Ahli Utama",
+        "penjelasan": "Jabatan Fungsional Ahli Utama (tingkat tertinggi jabatan fungsional, biasanya Golongan IV/c, IV/d, atau IV/e)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 242,
+        "singkatan": "JF Terampil",
+        "penjelasan": "Jabatan Fungsional Terampil (tingkat awal jabatan fungsional berbasis keterampilan, biasanya Golongan II)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 243,
+        "singkatan": "JF Mahir",
+        "penjelasan": "Jabatan Fungsional Mahir (tingkat lanjutan jabatan fungsional berbasis keterampilan, biasanya Golongan III)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 244,
+        "singkatan": "PNS Golongan",
+        "penjelasan": "Pegawai Negeri Sipil dengan tingkatan golongan berdasarkan pendidikan dan masa kerja",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 245,
+        "singkatan": "Eselon V",
+        "penjelasan": "Tingkatan jabatan struktural terendah (biasanya untuk jabatan pelaksana tingkat kecamatan atau desa, seperti Lurah)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 246,
+        "singkatan": "Kepala UPT",
+        "penjelasan": "Kepala Unit Pelaksana Teknis (pimpinan unit teknis di bawah dinas, misalnya Kepala UPT Pendidikan)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 247,
+        "singkatan": "Sekretaris UPT",
+        "penjelasan": "Sekretaris Unit Pelaksana Teknis (pendamping kepala UPT dalam tugas administrasi)",
+        "kategori": "Struktur Organisasi"
+    },
+    {
+        "no": 248,
+        "singkatan": "P2K",
+        "penjelasan": "Penilaian Prestasi Kerja (sistem penilaian kinerja untuk kenaikan pangkat atau golongan)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 249,
+        "singkatan": "KPM",
+        "penjelasan": "Kenaikan Pangkat dan Mutasi (proses administrasi untuk kenaikan pangkat dan perpindahan jabatan)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 250,
+        "singkatan": "TMT",
+        "penjelasan": "Terhitung Mulai Tanggal (tanggal resmi mulai berlakunya jabatan, pangkat, atau golongan)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 251,
+        "singkatan": "SKP",
+        "penjelasan": "Sasaran  Kinerja Pegawai (dokumen yang berisi target kinerja pegawai dalam satu tahun)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 252,
+        "singkatan": "PKP",
+        "penjelasan": "Penilaian Kinerja Pegawai (proses evaluasi kinerja pegawai berdasarkan SKP)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 253,
+        "singkatan": "KGB",
+        "penjelasan": "Kenaikan Gaji Berkala (proses kenaikan gaji pegawai secara berkala sesuai dengan masa kerja)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 254,
+        "singkatan": "DP3",
+        "penjelasan": "Daftar Penilaian Pelaksanaan Pekerjaan (dokumen penilaian kinerja pegawai)",
+        "kategori": "Kepegawaian"
+    },
+    {
+        "no": 255,
+        "singkatan": "SKP Tahunan",
+        "penjelasan": "Sasaran Kinerja Pegawai Tahunan (dokumen yang berisi target kinerja pegawai untuk satu tahun)",
+        "kategori": "Kepegawaian"
     }
 ]
