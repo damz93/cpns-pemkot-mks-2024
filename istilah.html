@@ -6,28 +6,44 @@
     <title>Istilah-istilah dalam PNS | CPNS Pemkot Makassar 2024 | by Dedy A Muzawwir</title>
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            background-color: #f4f9f9;
+            background: url('https://images.unsplash.com/photo-1643022040583-b4be6de7fbf6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fA%3D%3D') 
+                no-repeat center center/cover;
+            background-attachment: fixed;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            align-items: center;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Darker tint for contrast */
+            backdrop-filter: blur(10px); /* iOS-like blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            z-index: -1;
         }
 
         .header-wrapper {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background-color: aliceblue;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .title-bar {
-            background-color: rgb(7, 42, 73);
-            color: white;
+            background: rgba(7, 42, 73, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
             text-align: center;
             padding: 15px 0;
         }
@@ -51,21 +67,27 @@
 
         .search-bar {
             padding: 10px 15px;
-            background-color: aliceblue;
+            background: transparent;
         }
 
         #search {
             width: 100%;
             padding: 12px;
             font-size: 16px;
-            border: 2px solid #007b83;
-            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
             outline: none;
             transition: border-color 0.3s;
         }
 
+        #search::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
         #search:focus {
-            border-color: #005f66;
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .main-content {
@@ -77,20 +99,21 @@
         .container {
             max-width: 800px;
             margin: auto;
-        }
-
-        h1 {
-            font-size: 1.3rem;
-            color: #007b83;
-            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .item {
-            background-color: #fff;
-            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
             margin-bottom: 12px;
             padding: 15px;
-            border-left: 5px solid #007b83;
+            border-left: 5px solid rgba(0, 123, 131, 0.7);
             transition: transform 0.2s;
         }
 
@@ -100,37 +123,36 @@
 
         .singkatan {
             font-weight: 600;
-            color: #007b83;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 5px;
         }
 
         .penjelasan {
             margin-bottom: 5px;
-            color: #333;
+            color: rgba(255, 255, 255, 0.85);
         }
 
         .kategori {
             font-size: 0.85rem;
-            color: #666;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         #saweria-widget {
             position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: #1D234D;
-            padding: 10px 15px;
-            border-radius: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            bottom: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 12px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             z-index: 9999;
-            animation: popText 1.5s infinite alternate ease-in-out;
-            font-size: 14px;
-            transition: transform 0.3s ease, background 0.3s;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         #saweria-widget:hover {
             transform: scale(1.1);
-            background: #3b448d;
+            background: rgba(255, 255, 255, 0.25);
         }
 
         #saweria-widget a {
@@ -142,8 +164,13 @@
         }
 
         #saweria-widget img {
-            width: 35px;
+            width: 30px;
             height: auto;
+        }
+
+        #saweria-widget span {
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         @keyframes popText {
@@ -164,8 +191,8 @@
                 font-size: 0.9rem;
             }
 
-            h1 {
-                font-size: 1.3rem;
+            .container {
+                padding: 15px;
             }
 
             #saweria-widget {
@@ -176,7 +203,7 @@
             }
 
             #saweria-widget img {
-                width: 30px;
+                width: 25px;
             }
         }
     </style>
@@ -193,9 +220,9 @@
     <!-- Header Sticky -->
     <div class="header-wrapper">
         <div class="title-bar">
-            <a href="index.html">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" alt="Logo Pemkot Makassar">
-            </a>
+            <a href="../cpns-pemkot-mks-2024" class="no-style">
+                <img title="Kembali ke Menu Utama" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" alt="Makassar Logo">
+            </a><br>
             <h2>DAFTAR ISTILAH & SINGKATAN</h2>
             <p>CPNS Pemerintah Kota Makassar 2024</p>
         </div>
@@ -207,7 +234,6 @@
     <!-- Scrollable List -->
     <div class="main-content">
         <div class="container">
-            <!-- <h1>📘 Daftar Istilah & Singkatan CPNS</h1> -->
             <div id="list-container"></div>
         </div>
     </div>
@@ -219,36 +245,35 @@
             const searchInput = document.getElementById("search");
 
             const loadData = async () => {
-    try {
-        const response = await fetch("json/istilah.json");
-        if (!response.ok) throw new Error("Network response was not ok");
-        let data = await response.json();
+                try {
+                    const response = await fetch("json/istilah.json");
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    let data = await response.json();
 
-        // 🔽 Urutkan berdasarkan singkatan ASC
-        data.sort((a, b) => a.singkatan.localeCompare(b.singkatan));
+                    // Sort by singkatan ASC
+                    data.sort((a, b) => a.singkatan.localeCompare(b.singkatan));
 
-        let istilahList = data;
-        renderList(istilahList);
+                    let istilahList = data;
+                    renderList(istilahList);
 
-        searchInput.addEventListener("input", () => {
-            const keyword = searchInput.value.toLowerCase();
-            const filtered = istilahList.filter(item =>
-                item.singkatan.toLowerCase().includes(keyword) ||
-                item.penjelasan.toLowerCase().includes(keyword) ||
-                item.kategori.toLowerCase().includes(keyword)
-            );
-            renderList(filtered);
-        });
-    } catch (error) {
-        container.innerHTML = `<p style="color: red;">Gagal memuat data: ${error.message}</p>`;
-    }
-};
-
+                    searchInput.addEventListener("input", () => {
+                        const keyword = searchInput.value.toLowerCase();
+                        const filtered = istilahList.filter(item =>
+                            item.singkatan.toLowerCase().includes(keyword) ||
+                            item.penjelasan.toLowerCase().includes(keyword) ||
+                            item.kategori.toLowerCase().includes(keyword)
+                        );
+                        renderList(filtered);
+                    });
+                } catch (error) {
+                    container.innerHTML = `<p style="color: rgba(255, 255, 255, 0.7);">Gagal memuat data: ${error.message}</p>`;
+                }
+            };
 
             const renderList = (items) => {
                 container.innerHTML = "";
                 if (items.length === 0) {
-                    container.innerHTML = "<p>Tidak ada hasil ditemukan.</p>";
+                    container.innerHTML = "<p style='color: rgba(255, 255, 255, 0.7);'>Tidak ada hasil ditemukan.</p>";
                     return;
                 }
 
