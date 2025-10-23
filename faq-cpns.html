@@ -7,98 +7,231 @@
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <style>
-        a{
-            text-decoration: none;
-            background-color: rgb(176, 25, 25);
+        body {
+            background: url('https://images.unsplash.com/photo-1643022040583-b4be6de7fbf6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fA%3D%3D') 
+                no-repeat center center/cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding-bottom: 90px;
+            font-family: 'Inter', sans-serif;
             color: white;
-            padding : 3px;
+            overflow-x: hidden;
         }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Darker tint for contrast */
+            backdrop-filter: blur(10px); /* iOS-like blur effect */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            z-index: -1;
+        }
+
+        .header-section {
+            background: rgba(7, 42, 73, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        .header-section h2 {
+            font-weight: 700;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .header-section p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            margin: 5px 0 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1); /* Frosted glass effect */
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .accordion-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .accordion-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white !important;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .accordion-body {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .btn-success {
+            background: rgba(92, 184, 92, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            background: rgba(92, 184, 92, 0.9);
+        }
+
+        .btn-secondary {
+            background: rgba(108, 117, 125, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            background: rgba(108, 117, 125, 0.9);
+        }
+
+        #saweria-widget {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 12px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        #saweria-widget:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        #saweria-widget img {
+            width: 30px;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        #saweria-widget span {
+            margin-left: 5px;
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .modal-header, .modal-footer {
+            border: none;
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+
         a.no-style {
-            background-color: transparent;
+            background: transparent;
             color: inherit;
             padding: 0;
-            text-decoration: none;
         }
+
         .btn-hover-scale:hover {
             transform: scale(1.1);
             transition: transform 0.2s ease-in-out;
         }
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            /* display: flex; */
-            background-color: white;
-            height: auto;
-            
-            padding-bottom: 60px;
-            margin: 0;
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 15px;
+            }
+            .header-section h2 {
+                font-size: 1.5rem;
+            }
+            .header-section p {
+                font-size: 0.9rem;
+            }
         }
-
-
     </style>
-      <style>
-        #saweria-widget {
-          position: fixed;
-          bottom: 10px; 
-          left: 1%;
-          background: #1D234D;
-          padding: 10px 15px;
-          border-radius: 30px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-          z-index: 9999;
-          animation: popText 1s infinite alternate ease-in-out;
-          font-family: sans-serif;
-          font-size: 14px;
-          transition: transform 0.5s ease;
-        }
-      
-        #saweria-widget:hover {
-          transform: scale(1.2);
-          background: #3b448d;
-        }
-      
-        #saweria-widget img {
-          width: 50px;
-          height: auto;
-        }
-        @keyframes popText {
-            0% {
-                transform: scale(1);
-                text-shadow: 2px 2px 0px #000;
-            }
-
-            50% {
-                transform: scale(1.07);
-                text-shadow: 4px 4px 0px #000;
-            }
-
-            100% {
-                transform: scale(1);
-                text-shadow: 2px 2px 0px #000;
-            }
-        }
-      </style>
 </head>
 <body>
-    <div style="background-color:aliceblue;width: 100%; text-align: center;">
-        <div id="saweria-widget">
-            <a href="https://saweria.co/damz93" target="_blank" style="text-decoration: none; color: white;">
-                <img src="https://www.pngplay.com/wp-content/uploads/12/Killua-Zoldyck-Transparent-Image.png" alt="Donasi" style="width: 35px; vertical-align: middle;">
-                <span style="margin-left: 1px;font-family: poppins;">Boleh Kak Recehannya💖</span>
-            </a>
-        </div>
-        <div style="background-color:aliceblue; position: sticky; top: 0; z-index: 1000;">
-            <h2 class="text-center pt-3" style="background-color:rgb(7, 42, 73);color:white;font-weight:bold;">
-                <a href="index.html"class="no-style"><img title="Kembali ke Menu Utama" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" height="80px" width="auto"></a><br>F A Q
-            <p class="text-center pb-3" style="color:white;font-weight:120;font-size: 1.1rem;">
-                CPNS Pemerintah Kota Makassar 2024
-            </p></h2>
-        </div>
-        </div>
+    <div class="header-section">
+        <h2>
+            <a href="index.html" class="no-style"><img title="Kembali ke Menu Utama" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" height="80px" width="auto"></a><br>F A Q
+        </h2>
+        <p>CPNS Pemerintah Kota Makassar 2024</p>
+    </div>
+
+    <div id="saweria-widget">
+        <a href="https://saweria.co/damz93" target="_blank" style="text-decoration: none; color: #fff;">
+            <img src="https://www.pngplay.com/wp-content/uploads/12/Killua-Zoldyck-Transparent-Image.png" alt="Donasi">
+            <span>Boleh Kak Recehannya 💖</span>
+        </a>
+    </div>
+
     <div class="container mt-3">
-        <div class="card shadow-sm p-3" style="background-color: aliceblue;">          
+        <div class="card shadow-sm p-3">          
             <input autofocus autocomplete="off" type="text" id="searchBox" class="form-control" placeholder="Mauki tanya apa?" onkeyup="filterFAQ()">
             <div class="accordion d-none" id="faqAccordion">
                 <!-- Data dari Google Sheets akan dimuat di sini -->
@@ -109,12 +242,11 @@
                 <p class="mb-2">Tidak menemukan jawaban? Support dengan menambahkan FAQ lain di link berikut:</p>
                 <button class="btn btn-success w-100" onclick="openApprovalModal()">Ya, Saya mau bantu 😊</button>
             </div>
-          
         </div>
-
     </div>
-     <!-- Modal Persetujuan -->
-     <div class="modal fade" id="approvalModal" tabindex="-1" aria-labelledby="approvalModalLabel" aria-hidden="true">
+
+    <!-- Modal Persetujuan -->
+    <div class="modal fade" id="approvalModal" tabindex="-1" aria-labelledby="approvalModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -136,19 +268,12 @@
                     <button type="button" class="btn btn-success me-3" onclick="redirectToForm()">Ya, Saya Setuju</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak Setuju</button>
                 </div>
-                
             </div>
         </div>
     </div>
 
     <script>
-        // Ganti dengan ID spreadsheet Anda
-        // const SPREADSHEET_ID = "1-YAGXVzCQosRtgXZDkHF_hgRy-O12ywHEfQ0kkuIb5Q";
-        
-        // const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv`;
-        const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/e/2PACX-1vSvEzh0Ps5yeM9uGO5vuubyRlI2ZQQXbBqIQ-r6pwWopnu3XkI5ajEvrK13cmLCa2UlfyJ4xrWMQDKs/pub?gid=1107136817&single=true&output=csv`;
-
-        // Ganti dengan Google Form prefilled link Anda
+        const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSvEzh0Ps5yeM9uGO5vuubyRlI2ZQQXbBqIQ-r6pwWopnu3XkI5ajEvrK13cmLCa2UlfyJ4xrWMQDKs/pub?gid=1107136817&single=true&output=csv";
         const FORM_BASE_URL = "https://forms.gle/mWLnK4T1XVK9UTFZ7";
 
         function openApprovalModal() {
@@ -159,8 +284,6 @@
             $("#approvalModal").modal("hide");
             window.open(FORM_BASE_URL, "_blank");
         }
-
-
 
         let faqData = [];
 
@@ -173,43 +296,36 @@
                 .then(response => response.text())
                 .then(csvText => {
                     Papa.parse(csvText, {
-                    header: true,
-                    skipEmptyLines: true,
-                    complete: function(results) {
-                        faqData = results.data.map(row => ({
+                        header: true,
+                        skipEmptyLines: true,
+                        complete: function(results) {
+                            faqData = results.data.map(row => ({
+                                question: row["Pertanyaan"] || row[3], 
+                                answer: row["Jawaban"] || row[4] 
+                            }));
 
-                    
-                        // question: item[3],
-                        // answer: item[4]
-                        question: row["Pertanyaan"] || row[3], 
-                        answer: row["Jawaban"] || row[4] 
-                    }));
+                            faqData.sort((a, b) => a.question.localeCompare(b.question));
 
-                    // Urutkan berdasarkan huruf pertama pertanyaan (A-Z)
-                    faqData.sort((a, b) => a.question.localeCompare(b.question));
- 
-
-                    let faqHTML = faqData.map((item, index) => `
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading${index}">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
-                                        ${item.question}
-                                    </button>
-                                </h2>
-                                <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        ${item.answer}
+                            let faqHTML = faqData.map((item, index) => `
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading${index}">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
+                                            ${item.question}
+                                        </button>
+                                    </h2>
+                                    <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            ${item.answer}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        `).join("");
+                            `).join("");
 
-                        $("#faqAccordion").html(faqHTML);
-                        // $("#faqAccordion").removeClass("d-none"); // Menampilkan daftar FAQ sejak awal
-                }
-            });
-        })
-        .catch(error => {
+                            $("#faqAccordion").html(faqHTML);
+                        }
+                    });
+                })
+                .catch(error => {
                     $("#faqAccordion").html("<p class='text-center text-danger'>Gagal mengambil data FAQ.</p>");
                     console.error("Error fetching FAQ:", error);
                 });
@@ -229,10 +345,6 @@
                 $("#faqAccordion").removeClass("d-none");
             }
 
-
-
-            $("#faqAccordion").removeClass("d-none"); // Tampilkan daftar FAQ saat mengetik
-
             items.forEach(item => {
                 let question = item.querySelector(".accordion-button").textContent.toLowerCase();
                 if (question.includes(input)) {
@@ -249,7 +361,6 @@
                 $("#noResult").addClass("d-none");
             }
         }
-
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
