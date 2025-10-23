@@ -25,7 +25,6 @@
             align-items: center;
         }
 
-        /* iOS 16-inspired container */
         .container {
             max-width: 100%;
             width: 100%;
@@ -37,7 +36,13 @@
             margin-bottom: 80px;
         }
 
-        /* Popup styling */
+        /* Fallback for browsers that don't support backdrop-filter */
+        @supports not (backdrop-filter: blur(10px)) {
+            .container {
+                background: rgba(255, 255, 255, 0.9);
+            }
+        }
+
         .popup-container {
             position: fixed;
             top: 0;
@@ -52,6 +57,12 @@
             z-index: 9999;
         }
 
+        @supports not (backdrop-filter: blur(5px)) {
+            .popup-container {
+                background: rgba(0, 0, 0, 0.5);
+            }
+        }
+
         .popup-box {
             background: rgba(255, 255, 255, 0.95);
             padding: 20px;
@@ -60,6 +71,8 @@
             width: 400px;
             text-align: center;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10000;
         }
 
         .popup-box h2 {
@@ -76,16 +89,20 @@
             margin-bottom: 20px;
         }
 
-        .popup-box .btn {
+        .btn {
             border-radius: 12px;
             padding: 10px 20px;
             font-weight: 500;
             transition: transform 0.2s, background-color 0.2s;
+            pointer-events: auto;
+            cursor: pointer;
+            z-index: 10001;
         }
 
         .btn-success {
             background-color: #007aff;
             border: none;
+            color: #fff;
         }
 
         .btn-success:hover {
@@ -96,6 +113,7 @@
         .btn-danger {
             background-color: #ff3b30;
             border: none;
+            color: #fff;
         }
 
         .btn-danger:hover {
@@ -103,7 +121,6 @@
             transform: scale(1.05);
         }
 
-        /* Header styling */
         .header {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -135,7 +152,6 @@
             margin: 5px 0 0;
         }
 
-        /* Table styling */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
@@ -186,7 +202,6 @@
             margin-left: 5px;
         }
 
-        /* Saweria widget */
         #saweria-widget {
             position: fixed;
             bottom: 20px;
@@ -240,6 +255,10 @@
                 left: 10px;
             }
         }
+
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -269,7 +288,7 @@
 
     <div class="container">
         <div class="header">
-            <a href="index.html" class="no-style">
+            <a href="../" class="no-style">
                 <img title="Kembali ke Menu Utama" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" alt="Makassar Logo">
             </a>
             <h2>D A T A</h2>
@@ -294,15 +313,41 @@
     </div>
 
     <script>
-        document.getElementById('agreeBtn').addEventListener('click', function() {
-            document.getElementById('popup').classList.add('hidden');
-        });
-        
-        document.getElementById('disagreeBtn').addEventListener('click', function() {
-            window.location.href = "https://bkpsdmd.makassarkota.go.id/";
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Popup button event listeners
+            const agreeBtn = document.getElementById('agreeBtn');
+            const disagreeBtn = document.getElementById('disagreeBtn');
+            const popup = document.getElementById('popup');
 
-        $(document).ready(function() {
+            if (agreeBtn && popup) {
+                agreeBtn.addEventListener('click', function() {
+                    console.log('Agree button clicked');
+                    popup.classList.add('hidden');
+                });
+                agreeBtn.addEventListener('touchstart', function(e) {
+                    e.preventDefault(); // Prevent default touch behavior
+                    console.log('Agree button touched');
+                    popup.classList.add('hidden');
+                });
+            } else {
+                console.error('agreeBtn or popup element not found');
+            }
+
+            if (disagreeBtn) {
+                disagreeBtn.addEventListener('click', function() {
+                    console.log('Disagree button clicked');
+                    window.location.href = "https://bkpsdmd.makassarkota.go.id/";
+                });
+                disagreeBtn.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    console.log('Disagree button touched');
+                    window.location.href = "https://bkpsdmd.makassarkota.go.id/";
+                });
+            } else {
+                console.error('disagreeBtn element not found');
+            }
+
+            // DataTable initialization
             let sheetUrl = "https://docs.google.com/spreadsheets/d/1pcwE1QG0zuQSgajTKFLqOjdHliTDxAwP0t11FkDR0XM/gviz/tq?tqx=out:json";
 
             $.get(sheetUrl, function(data) {
@@ -314,7 +359,7 @@
                         noper: row.c[9] ? row.c[9].v : "",
                         nama: row.c[2] ? row.c[2].v : "",
                         phone: row.c[3] ? row.c[3].v : "",
-                        email: row.c[1] ? row.c[1].v : "", // Fixed index for email
+                        email: row.c[1] ? row.c[1].v : "",
                         satuanKerja: row.c[6] ? row.c[6].v : "",
                         jabatan: row.c[5] ? row.c[5].v : ""
                     })).sort((a, b) => {
@@ -362,7 +407,11 @@
                             emailContainer.html(`${email} <i class="fa fa-eye-slash toggle-email" style="cursor:pointer; color:#ff3b30;"></i>`);
                         }
                     });
+                } else {
+                    console.error('Failed to parse Google Sheets data');
                 }
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                console.error('Error fetching Google Sheets data:', textStatus, errorThrown);
             });
         });
 
@@ -382,6 +431,7 @@
                     });
                 })
                 .catch(err => {
+                    console.error('Copy failed:', err);
                     Swal.fire({
                         icon: 'error',
                         title: 'Gagal Menyalin',
