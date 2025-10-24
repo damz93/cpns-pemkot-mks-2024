@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ulang Tahun & Event | CPNS Pemkot Makassar 2024</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --blur-bg: rgba(255, 255, 255, 0.1);
+    }
+    body {
+      background: url('https://images.unsplash.com/photo-1643022040583-b4be6de7fbf6?q=80&w=1974&auto=format&fit=crop') center/cover fixed;
+      min-height: 100vh;
+      margin: 0;
+      padding-bottom: 100px;
+      font-family: 'Inter', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(10px); z-index: -1;
+    }
+    .header-section {
+      background: rgba(7, 42, 73, 0.9); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.2); text-align: center;
+      position: sticky; top: 0; z-index: 1000; padding: 20px 0;
+    }
+    .header-section h2 { font-weight: 700; font-size: 1.8rem; margin: 0; }
+    .header-section p { font-weight: 300; margin: 5px 0 0; }
+
+    .container {
+      background: var(--blur-bg); border-radius: 20px; padding: 20px;
+      margin-top: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2);
+      max-width: 900px;
+    }
+
+    .form-control {
+      background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3);
+      color: white; border-radius: 12px; padding: 10px;
+    }
+    .form-control::placeholder { color: rgba(255,255,255,0.7); }
+
+    .card-event {
+      background: rgba(255,255,255,0.15); border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.2); padding: 16px;
+      margin-bottom: 12px; transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+    .card-event:hover {
+      transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .badge-today { background: #28a745; }
+    .badge-soon { background: #ffc107; color: #000; }
+    .badge-past { background: #6c757d; }
+    .badge-other { background: #dc3545; }
+
+    .btn-wa {
+      background: #25d366; color: white; border: none; border-radius: 10px;
+      font-size: 0.85rem; padding: 6px 12px; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .btn-wa:hover { background: #128c7e; transform: scale(1.05); }
+
+    #saweria-widget {
+      position: fixed; bottom: 15px; left: 15px; background: rgba(255,255,255,0.15);
+      padding: 8px 14px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 9999; border: 1px solid rgba(255,255,255,0.3);
+    }
+    #saweria-widget:hover { transform: scale(1.1); background: rgba(255,255,255,0.25); }
+
+    @media (max-width: 576px) {
+      .header-section h2 { font-size: 1.5rem; }
+      .card-event { padding: 12px; }
+      .btn-wa { font-size: 0.8rem; padding: 5px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-section">
+    <h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/800px-Coat_of_Arms_of_City_Makassar.png" 
+           alt="Makassar" width="45" style="vertical-align: middle;">
+      Ulang Tahun & Event
+    </h2>
+    <p>CPNS Pemerintah Kota Makassar 2024</p>
+  </div>
+
+  <div id="saweria-widget">
+    <a href="https://saweria.co/damz93" target="_blank" style="color:#fff; text-decoration:none;">
+      <img src="https://www.pngplay.com/wp-content/uploads/12/Killua-Zoldyck-Transparent-Image.png" width="28" alt="Donasi">
+      <span>Boleh Kak Recehannya</span>
+    </a>
+  </div>
+
+  <div class="container">
+    <input type="text" id="searchInput" class="form-control mb-3" placeholder="Cari nama staf...">
+    <div id="eventList"></div>
+  </div>
+
+  <script>
+    // === CONFIG: Ganti dengan ID Google Sheets kamu ===
+    const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID_HERE';
+    const SHEET_NAME = 'Sheet1';
+    const API_KEY = 'YOUR_GOOGLE_API_KEY'; // Opsional, jika public → kosongkan
+    // ================================================
+
+    const SHEET_URL = `https://docs.google.com/spreadsheets/d/e/2PACX-1vSvEzh0Ps5yeM9uGO5vuubyRlI2ZQQXbBqIQ-r6pwWopnu3XkI5ajEvrK13cmLCa2UlfyJ4xrWMQDKs/pub?gid=1636637928&single=true&output=csv`;
+
+    // Fungsi Indonesia
+    const indoBulan = (m) => ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'][m-1] || m;
+    const indoTanggal = (date) => {
+      if (!date) return '';
+      const d = new Date(date);
+      return `${d.getDate()} ${indoBulan(d.getMonth()+1)} ${d.getFullYear()}`;
+    };
+
+    // Ucapan berdasarkan usia
+    const ucapanByUsia = (usia) => {
+      const ucapan = {
+        muda: [
+          "Selamat ulang tahun! Semoga setiap langkahmu menjadi pijakan menuju masa depan yang penuh cahaya dan prestasi.",
+          "Hari ini adalah awal baru, semoga hidupmu dipenuhi semangat juang dan harapan yang tak pernah padam.",
+          "Usia muda adalah modal, semoga engkau kelola dengan bijak untuk masa depan gemilang.",
+          "Selamat ulang tahun! Semoga impianmu semakin jelas dan langkahmu mantap."
+        ],
+        dewasa: [
+          "Selamat ulang tahun! Semoga usia yang bertambah menghadirkan kedewasaan, kebijaksanaan, dan keberkahan.",
+          "Semoga rezeki, kesehatan, dan kebahagiaan selalu seimbang dalam hidupmu.",
+          "Hari ini adalah momentum untuk bersyukur dan merencanakan langkah yang lebih bijak.",
+          "Selamat ulang tahun! Semoga engkau selalu menjadi teladan bagi generasi muda."
+        ],
+        emas: [
+          "Selamat ulang tahun! Usia ini adalah fase keemasan untuk memberi teladan dan menebar kebaikan.",
+          "Semoga engkau senantiasa sehat, kuat, dan diberkahi dalam setiap peran hidupmu.",
+          "Hari ini adalah pengingat bahwa hidup adalah tentang keseimbangan dan syukur.",
+          "Selamat ulang tahun! Semoga setiap langkahmu selalu diridhoi."
+        ],
+        senior: [
+          "Selamat ulang tahun! Semoga sisa usia menjadi ladang keberkahan, penuh ketenteraman.",
+          "Usia adalah anugerah, semoga engkau tetap menjadi suluh kebijaksanaan bagi generasi setelahmu.",
+          "Hari ini adalah syukur atas perjalanan panjang penuh makna.",
+          "Selamat ulang tahun! Semoga damai hatimu memancar pada sekelilingmu."
+        ]
+      };
+      let pool = usia < 30 ? ucapan.muda : usia <= 40 ? ucapan.dewasa : usia <= 50 ? ucapan.emas : ucapan.senior;
+      return pool[Math.floor(Math.random() * pool.length)];
+    };
+
+    // Hitung usia
+    const hitungUsia = (tglLahir) => {
+      const birth = new Date(tglLahir);
+      const today = new Date();
+      let age = today.getFullYear() - birth.getFullYear();
+      const m = today.getMonth() - birth.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+      return age;
+    };
+
+    // Format tanggal ulang tahun tahun ini
+    const getBdayThisYear = (tglLahir) => {
+      const birth = new Date(tglLahir);
+      const year = new Date().getFullYear();
+      let bday = new Date(year, birth.getMonth(), birth.getDate());
+      // Handle 29 Feb
+      if (birth.getMonth() === 1 && birth.getDate() === 29 && !((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0)) {
+        bday = new Date(year, 1, 28);
+      }
+      return bday;
+    };
+
+    // Kategori
+    const getKategori = (bday) => {
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      const diff = Math.floor((bday - today) / (1000*60*60*24));
+      if (diff === 0) return { text: 'Hari Ini', badge: 'badge-today' };
+      if (diff > 0 && diff <= 7) return { text: 'Akan Datang', badge: 'badge-soon' };
+      if (diff < 0 && diff >= -7) return { text: 'Baru Lalu', badge: 'badge-past' };
+      return { text: 'Lainnya', badge: 'badge-other' };
+    };
+
+    // Load dari Google Sheets
+    async function loadData() {
+      try {
+        const res = await fetch(SHEET_URL);
+        const data = await res.json();
+        const rows = data.values.slice(1); // skip header
+        const todayList = [];
+
+        const list = document.getElementById('eventList');
+        list.innerHTML = '<div class="text-center"><div class="spinner-border text-light" style="width:3rem;height:3rem;"></div></div>';
+
+        let html = '';
+        rows.forEach(row => {
+          const [nama, tglLahir, jabatan, lokasi, jk] = row;
+          if (!nama || !tglLahir) return;
+
+          const usia = hitungUsia(tglLahir);
+          const ucapan = ucapanByUsia(usia);
+          const bdayThisYear = getBdayThisYear(tglLahir);
+          const kat = getKategori(bdayThisYear);
+          const sapaan = jk === 'Laki-laki' ? 'Pak' : jk === 'Perempuan' ? 'Bu' : '';
+          const waText = encodeURIComponent(`${sapaan} ${nama}! ${ucapan} — Salam dari Pemkot Makassar`);
+          const waLink = `https://wa.me/?text=${waText}`;
+
+          if (kat.text === 'Hari Ini') todayList.push(nama);
+
+          html += `
+            <div class="card-event" data-nama="${nama.toLowerCase()}">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <div>
+                  <strong>${nama}</strong><br>
+                  <small class="text-light">Usia: <strong>${usia}</strong> tahun • ${jabatan || ''} - ${lokasi || ''}</small>
+                </div>
+                <span class="badge ${kat.badge}">${kat.text}</span>
+              </div>
+              <div class="small mb-2">
+                <i class="fa-solid fa-cake-candles"></i> ${indoTanggal(tglLahir)}
+                ${kat.text !== 'Hari Ini' ? ` → ${indoTanggal(bdayThisYear)}` : ''}
+              </div>
+              <p class="mb-2 small">${ucapan}</p>
+              <a href="${waLink}" target="_blank" class="btn-wa">
+                <i class="fab fa-whatsapp"></i> Kirim Ucapan
+              </a>
+            </div>`;
+        });
+
+        list.innerHTML = html || '<div class="text-center text-light">Tidak ada data ulang tahun.</div>';
+
+        // SweetAlert jika ada ulang tahun hari ini
+        if (todayList.length > 0) {
+          Swal.fire({
+            title: 'Ada yang ulang tahun hari ini!',
+            html: todayList.map((n, i) => `${i+1}. <strong>${n}</strong>`).join('<br>'),
+            icon: 'success',
+            confirmButtonText: 'Lihat Semua',
+            confirmButtonColor: '#0d6efd'
+          });
+        }
+
+      } catch (err) {
+        document.getElementById('eventList').innerHTML = `<div class="text-danger">Error: ${err.message}</div>`;
+      }
+    }
+
+    // Pencarian
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      document.querySelectorAll('.card-event').forEach(card => {
+        const visible = card.dataset.nama.includes(query);
+        card.style.display = visible ? '' : 'none';
+      });
+    });
+
+    // Init
+    loadData();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
