@@ -15,9 +15,12 @@
     <!-- Google Fonts (Inter for iOS-like typography) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Animate.css untuk efek masuk yang lebih smooth -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <style>
         body {
-            background: url('https://images.unsplash.com/photo-1643022040583-b4be6de7fbf6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fA%3D%3D') 
+            background: url('https://images.unsplash.com/photo-1643022040583-b4be6de7fbf6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3') 
                 no-repeat center center/cover;
             background-attachment: fixed;
             min-height: 100vh;
@@ -38,14 +41,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.3); /* Darker tint for contrast */
-            backdrop-filter: blur(10px); /* iOS-like blur effect */
-            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             z-index: -1;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white for frosted glass */
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 20px;
             margin-top: 20px;
@@ -92,20 +95,20 @@
             height: 140px;
             border-radius: 15px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background: rgba(255, 255, 255, 0.2); /* iOS-like translucent tiles */
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .tile:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
         }
 
         .tile i {
-            font-size: 2rem;
-            margin-bottom: 8px;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
         }
 
         .tile span {
@@ -114,12 +117,13 @@
             font-weight: 500;
         }
 
-        .tile-red { background: rgba(217, 83, 79, 0.7); }
-        .tile-blue { background: rgba(2, 117, 216, 0.7); }
-        .tile-green { background: rgba(92, 184, 92, 0.7); }
-        .tile-orange { background: rgba(240, 173, 78, 0.7); }
-        .tile-grey { background: rgba(150, 150, 150, 0.7); }
-        .tile-purple { background: rgba(97, 61, 124, 0.7); }
+        .tile-red    { background: rgba(217, 83, 79, 0.75); }
+        .tile-blue   { background: rgba(2, 117, 216, 0.75); }
+        .tile-green  { background: rgba(92, 184, 92, 0.75); }
+        .tile-orange { background: rgba(240, 173, 78, 0.75); }
+        .tile-grey   { background: rgba(150, 150, 150, 0.75); }
+        .tile-purple { background: rgba(97, 61, 124, 0.75); }
+        .tile-cyan   { background: rgba(23, 162, 184, 0.8); } /* warna baru untuk countdown */
 
         #saweria-widget {
             position: fixed;
@@ -178,7 +182,7 @@
 <body>
     <div class="container h-100 d-flex flex-column align-items-center" style="padding-top: 50px;">
         <a href="https://damz93.github.io/cpns-pemkot-mks-2024/"><img class="m-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Coat_of_Arms_of_City_Makassar.png/640px-Coat_of_Arms_of_City_Makassar.png" width="120" height="auto" alt=""></a>
-        <div class="speech-bubble" id="typing-text"></div>
+        <div class="speech-bubble animate__animated animate__fadeIn" id="typing-text"></div>
 
         <!-- Widget Donasi Saweria -->
         <div id="saweria-widget">
@@ -190,36 +194,34 @@
 
         <div class="container py-4">
             <div class="row g-3 justify-content-center">
-                <!-- <div class="col-6 col-md-4 col-lg-2">
-                    <a href="https://damz93.github.io/cpns-pemkot-mks-2024/usul-nip" class="tile tile-red">
-                        <i class="fa-solid fa-spinner"></i>
-                        <span>Update Usul NIP</span>
-                    </a>
-                </div> -->
                 <div class="col-6 col-md-3 col-lg-3">
                     <a href="https://damz93.github.io/cpns-pemkot-mks-2024/cek-data" class="tile tile-red">
                         <i class="fa-solid fa-person"></i>
                         <span>Daftar CPNS</span>
                     </a>
                 </div>
-                <!-- <div class="col-6 col-md-4 col-lg-2">
-                    <a href="https://damz93.github.io/cpns-pemkot-mks-2024/resume-data" class="tile tile-green">
-                        <i class="fas fa-list"></i>
-                        <span>Resume Input</span>
-                    </a>
-                </div> -->
+
                 <div class="col-6 col-md-3 col-lg-3">
                     <a href="https://damz93.github.io/cpns-pemkot-mks-2024/kalender-event" class="tile tile-blue">
                         <i class="fa-solid fa-calendar-days"></i>
                         <span>Kalender Event</span>
                     </a>
                 </div>
+
+                <div class="col-6 col-md-3 col-lg-3">
+                    <a href="https://damz93.github.io/cpns-pemkot-mks-2024/countdown.html" class="tile tile-cyan animate__animated animate__pulse animate__infinite">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                        <span>Countdown PNS</span>
+                    </a>
+                </div>
+
                 <div class="col-6 col-md-3 col-lg-3">
                     <a href="https://damz93.github.io/cpns-pemkot-mks-2024/faq-cpns" class="tile tile-purple">
                         <i class="fa-solid fa-comments"></i>
                         <span>FAQ CPNS</span>
                     </a>
                 </div>
+
                 <div class="col-6 col-md-3 col-lg-3">
                     <a href="https://damz93.github.io/cpns-pemkot-mks-2024/istilah" class="tile tile-orange">
                         <i class="fa-solid fa-list-ol"></i>
@@ -251,7 +253,7 @@
     <script>
         const text = "Cari apaki, ces?";
         let index = 0;
-        const speed = 100; // Kecepatan mengetik (ms)
+        const speed = 100;
         function typeEffect() {
             if (index < text.length) {
                 document.getElementById("typing-text").innerHTML += text.charAt(index);
@@ -272,11 +274,9 @@
                 const data = await response.text();
                 if (!data) throw new Error("CSV kosong atau tidak dapat diakses");
     
-                // Parsing CSV ke array
                 const rows = data.split("\n").map(row => row.split(","));
                 if (!rows || rows.length === 0) throw new Error("Format CSV tidak valid");
     
-                // Ambil kolom kedua (index 1) sebagai teks dan kolom ketiga (index 2) sebagai penulis
                 messages = rows.map(row => {
                     const text = row[1]?.trim();
                     const author = row[2]?.trim();
@@ -297,19 +297,12 @@
     
         function updateMarqueeText() {
             if (messages.length === 0) return;
-    
-            // Pindah ke pesan berikutnya secara acak
             currentIndex = Math.floor(Math.random() * messages.length);
             document.getElementById("marqueeText").textContent = messages[currentIndex];
         }
     
-        // Panggil pertama kali saat halaman dimuat
         fetchSpreadsheetData();
-    
-        // Ganti teks setelah marquee selesai berjalan
         document.getElementById("marqueeText").addEventListener("animationiteration", updateMarqueeText);
-    
-        // Perbarui data dari Google Sheets setiap 5 menit
         setInterval(fetchSpreadsheetData, 150000);
     </script>
 </body>
